@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DumbData : MonoBehaviour
 {
@@ -36,6 +37,14 @@ public class DumbData : MonoBehaviour
 	 public AudioClip beeSound;
 	 public float beeVolume = 0.25f;
 
+	 [Header("Dialog Settings")]
+	 public bool playIntroDialog = false;
+
+
+	 [Header("Game Loop Settings")]
+	 public float TimeTillWin = 300;
+	 float winTimmer = 0;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -45,18 +54,47 @@ public class DumbData : MonoBehaviour
             audioSource = gameObject.AddComponent<AudioSource>();
         }
 
-        // Configure and play the music
-        audioSource.clip = musicClip;
-        audioSource.loop = loop;
-        audioSource.volume = MusicVolume;
-        audioSource.spatialBlend = 0f; // 0 = 2D sound (not positional)
+	if(!playIntroDialog) {
 
-        audioSource.Play();
+		// Configure and play the music
+		audioSource.clip = musicClip;
+		audioSource.loop = loop;
+		audioSource.volume = MusicVolume;
+		audioSource.spatialBlend = 0f; // 0 = 2D sound (not positional)
+
+		audioSource.Play();
+	}
+
+
+	if (playIntroDialog) {
+		DialogSettings dialogSettings = new DialogSettings();
+		dialogSettings.onDialogEnded = onFinishedDialog;
+		GetDialogSystem.RunDialog("Gamplay Placeholder", dialogSettings);
+	}
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        
-    }
+	 void Update()
+	 {
+
+		 winTimmer += Time.deltaTime;
+
+		 if (winTimmer >= TimeTillWin) {
+
+			 winTimmer = 0;
+			 SceneManager.LoadScene("Win");
+		 }
+	 }
+
+    	void onFinishedDialog() {
+		// Configure and play the music
+		audioSource.clip = musicClip;
+		audioSource.loop = loop;
+		audioSource.volume = MusicVolume;
+		audioSource.spatialBlend = 0f; // 0 = 2D sound (not positional)
+
+		audioSource.Play();
+	}
+
+
 }

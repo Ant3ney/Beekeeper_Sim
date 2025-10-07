@@ -1,0 +1,25 @@
+using UnityEngine;
+
+public static class GetDialogSystem
+{
+	public static void RunDialog(string identifier, DialogSettings dialogSettings = default) { 
+		GameObject dialogSystemObj = FindDialogObject();
+		dialogSystemObj.SetActive(true);
+		DialogSystem dialogSystem = GameObject.Find("DialogSystem").GetComponent<DialogSystem>();
+		dialogSystem.RunDialog(identifier, dialogSettings);
+	}
+
+	 public static GameObject FindDialogObject() {
+		GameObject dialogSystemObj = null;
+
+		foreach (var obj in Resources.FindObjectsOfTypeAll<GameObject>())
+		{
+			if (obj.name == "DialogSystem")
+			{
+				return obj;
+			}
+		}
+
+		return null;
+	}
+}
