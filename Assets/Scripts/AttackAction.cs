@@ -19,7 +19,7 @@ public partial class AttackAction : Action
 
 	protected override Status OnUpdate()
 	{
-		enemyCharacter.MoveIntoTokenAttackRangeAction();
+		enemyCharacter.Attacking();
 		return Status.Success;
 	}
 

@@ -8,6 +8,7 @@ public class EnemyCharacter : MonoBehaviour
 
 	public GameObject player;         // Reference to the player
 	public float approachDistance = 6f;
+	public float attackDistance = 1.5f;
 	private UnityEngine.AI.NavMeshAgent agent;
 	int tokens = 0;
 	public int tokenTickets = 1;
@@ -16,6 +17,7 @@ public class EnemyCharacter : MonoBehaviour
 	// SetVariableValue
 
 	public MainEnemyState state = MainEnemyState.MovingIntoTokenRange;
+	public AttackState attackState = AttackState.Lunging;
 
 	void Awake() {
 		agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
@@ -43,9 +45,12 @@ public class EnemyCharacter : MonoBehaviour
 		BlackboardVariable<MainEnemyState> newStateBlackboardVariable;
 		behaviorAgent.BlackboardReference.GetVariable("Main Enemy State", out newStateBlackboardVariable);
 		state = (MainEnemyState)newStateBlackboardVariable.ObjectValue;
+
+		BlackboardVariable<AttackState> newAttackStateBlackboardVariable;
+		behaviorAgent.BlackboardReference.GetVariable("Attack State", out newAttackStateBlackboardVariable);
+		attackState = (AttackState)newAttackStateBlackboardVariable.ObjectValue;
+
 		Debug.Log(newStateBlackboardVariable.ObjectValue);
-
-
 	}
 
 	float DistanceBetweenSelfAndPlayer() {
@@ -59,7 +64,18 @@ public class EnemyCharacter : MonoBehaviour
 	}
 
 	public void Attacking(){
+		float distanceToPlayer = DistanceBetweenSelfAndPlayer();
+		if (attackState == AttackState.Lunging && (attackDistance <= distanceToPlayer - 0.5f)) {
+			Transform playerLocation = player.transform;
+			agent.SetDestination(playerLocation.position);
+		} else if (attackState == AttackState.Lunging && (attackDistance > distanceToPlayer - 0.75f)) {
+			Engage();	
+			behaviorAgent.BlackboardReference.SetVariableValue("Main Enemy State", (object)AttackState.Engaging);
+		}
+	}
 
+	public void Engage() {
+		//Run Attack Anim
 	}
 
 	public void AwwardToken(int ammount) {

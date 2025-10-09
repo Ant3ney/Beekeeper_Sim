@@ -969,8 +969,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   approachDistance: 6
+  attackDistance: 1.5
   tokenTickets: 1
   state: 1
+  attackState: 0
 --- !u!4 &510900359
 Transform:
   m_ObjectHideFlags: 0
