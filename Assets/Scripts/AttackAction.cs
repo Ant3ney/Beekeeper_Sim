@@ -13,11 +13,13 @@ public partial class AttackAction : Action
 	protected override Status OnStart()
 	{
 		GameObject owner = this.GameObject;
+		EnemyCharacter enemyCharacter = owner.GetComponent<EnemyCharacter>();
 		return Status.Running;
 	}
 
 	protected override Status OnUpdate()
 	{
+		enemyCharacter.MoveIntoTokenAttackRangeAction();
 		return Status.Success;
 	}
 

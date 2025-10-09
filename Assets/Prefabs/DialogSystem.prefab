@@ -437,67 +437,18 @@ MonoBehaviour:
       backgroundOveride: {fileID: 3508876556431371442, guid: 262d5a8d06a41ca46aa2e4fe05c089b4, type: 3}
   - Identifier: Gamplay Placeholder
     DialogEntries:
-    - ActiveSpeakerName: The Queen
-      dialogText: "Ahh\u2026 a remnant of our children. Approach it \u2014 gently
-        now. Touch the hive, and it will answer your call."
-      LeftSubjectSprite: {fileID: 3759682628931920898, guid: a9d59c47453027e40972495940b42b3f, type: 3}
-      RightSubjectSprite: {fileID: -6219217318133598067, guid: 35540dd0a6feaa643b6972546f394737, type: 3}
-      CarryOverLastEntry: 1
-      Voice: {fileID: 8300000, guid: f1c4544fecb628b429c97aecbe7ccead, type: 3}
+    - ActiveSpeakerName: 
+      dialogText: 
+      LeftSubjectSprite: {fileID: 0}
+      RightSubjectSprite: {fileID: 0}
+      CarryOverLastEntry: 0
+      Voice: {fileID: 0}
       overideBackground: 0
       hideLeftSubject: 0
       hideRightSubject: 0
       hideSpeakerPanelAndText: 0
       hideDialogPanel: 0
-      backgroundOveride: {fileID: 8901513282938070278, guid: a590efbc79d75dc45839562e732cf0d3, type: 3}
-    - ActiveSpeakerName: The Keeper
-      dialogText: "They\u2026 they know me."
-      LeftSubjectSprite: {fileID: 3759682628931920898, guid: a9d59c47453027e40972495940b42b3f, type: 3}
-      RightSubjectSprite: {fileID: -6219217318133598067, guid: 35540dd0a6feaa643b6972546f394737, type: 3}
-      CarryOverLastEntry: 1
-      Voice: {fileID: 8300000, guid: d83e197dc5dbed544b79e60979279187, type: 3}
-      overideBackground: 0
-      hideLeftSubject: 0
-      hideRightSubject: 0
-      hideSpeakerPanelAndText: 0
-      hideDialogPanel: 0
-      backgroundOveride: {fileID: 8901513282938070278, guid: a590efbc79d75dc45839562e732cf0d3, type: 3}
-    - ActiveSpeakerName: The Queen
-      dialogText: They remember you. Bees never forget their Keeper.
-      LeftSubjectSprite: {fileID: 3759682628931920898, guid: a9d59c47453027e40972495940b42b3f, type: 3}
-      RightSubjectSprite: {fileID: -6219217318133598067, guid: 35540dd0a6feaa643b6972546f394737, type: 3}
-      CarryOverLastEntry: 1
-      Voice: {fileID: 8300000, guid: f1c4544fecb628b429c97aecbe7ccead, type: 3}
-      overideBackground: 0
-      hideLeftSubject: 0
-      hideRightSubject: 0
-      hideSpeakerPanelAndText: 0
-      hideDialogPanel: 0
-      backgroundOveride: {fileID: 8901513282938070278, guid: a590efbc79d75dc45839562e732cf0d3, type: 3}
-    - ActiveSpeakerName: The Keeper
-      dialogText: "Something\u2019s moving\u2026"
-      LeftSubjectSprite: {fileID: 3759682628931920898, guid: a9d59c47453027e40972495940b42b3f, type: 3}
-      RightSubjectSprite: {fileID: -6219217318133598067, guid: 35540dd0a6feaa643b6972546f394737, type: 3}
-      CarryOverLastEntry: 1
-      Voice: {fileID: 8300000, guid: d83e197dc5dbed544b79e60979279187, type: 3}
-      overideBackground: 0
-      hideLeftSubject: 0
-      hideRightSubject: 0
-      hideSpeakerPanelAndText: 0
-      hideDialogPanel: 0
-      backgroundOveride: {fileID: 8901513282938070278, guid: a590efbc79d75dc45839562e732cf0d3, type: 3}
-    - ActiveSpeakerName: The Queen
-      dialogText: Nature fears us now. Strike, before fear turns to fire.
-      LeftSubjectSprite: {fileID: 3759682628931920898, guid: a9d59c47453027e40972495940b42b3f, type: 3}
-      RightSubjectSprite: {fileID: -6219217318133598067, guid: 35540dd0a6feaa643b6972546f394737, type: 3}
-      CarryOverLastEntry: 1
-      Voice: {fileID: 8300000, guid: f1c4544fecb628b429c97aecbe7ccead, type: 3}
-      overideBackground: 0
-      hideLeftSubject: 0
-      hideRightSubject: 0
-      hideSpeakerPanelAndText: 0
-      hideDialogPanel: 0
-      backgroundOveride: {fileID: 8901513282938070278, guid: a590efbc79d75dc45839562e732cf0d3, type: 3}
+      backgroundOveride: {fileID: 0}
 --- !u!82 &5374338075485738451
 AudioSource:
   m_ObjectHideFlags: 0
