@@ -336,9 +336,10 @@ MonoBehaviour:
       hideDialogPanel: 1
       backgroundOveride: {fileID: 1200219686101763712, guid: a2ff5f335119a1d448c73cd8d41a2b59, type: 3}
     - ActiveSpeakerName: The Queen
-      dialogText: The flowers are wilting. Our children hunger. The reservoir is
-        guarded by those that want our kind erradicated. Let the forest learn that
-        all things sweet belong to the our royal family.
+      dialogText: Oh my darling knight, the flowers are wilting and the children
+        hunger. We must expand our reach towards the reservoir, but it is guarded
+        by those that want our kind erradicated. Let the forest learn that all things
+        sweet belong to our royal family.
       LeftSubjectSprite: {fileID: 0}
       RightSubjectSprite: {fileID: 0}
       CarryOverLastEntry: 0
@@ -363,12 +364,23 @@ MonoBehaviour:
       backgroundOveride: {fileID: 1200219686101763712, guid: a2ff5f335119a1d448c73cd8d41a2b59, type: 3}
   - Identifier: Level 1 Intro
     DialogEntries:
+    - ActiveSpeakerName: The Keeper
+      dialogText: We feel the hum of the hives.
+      LeftSubjectSprite: {fileID: -2274593751980099078, guid: a2137e69549c6e544a441ab78ead7c7f, type: 3}
+      RightSubjectSprite: {fileID: 5637047348223716582, guid: 69df0b0d66b6c264b88e1f3d7d1b02e5, type: 3}
+      CarryOverLastEntry: 0
+      Voice: {fileID: 8300000, guid: d83e197dc5dbed544b79e60979279187, type: 3}
+      overideBackground: 0
+      hideLeftSubject: 0
+      hideRightSubject: 0
+      hideSpeakerPanelAndText: 0
+      hideDialogPanel: 0
+      backgroundOveride: {fileID: 0}
     - ActiveSpeakerName: The Queen
-      dialogText: We must continue our work expanding our kingdom as goddess Mellona
-        desires. We must clear the land to set up more hives and destroy anyone that
-        gets in our way.
-      LeftSubjectSprite: {fileID: 3759682628931920898, guid: a9d59c47453027e40972495940b42b3f, type: 3}
-      RightSubjectSprite: {fileID: -6219217318133598067, guid: 35540dd0a6feaa643b6972546f394737, type: 3}
+      dialogText: And the hive needs access to more flowers, more resin, more water.
+        Follow my scent and I will lead us to glory.
+      LeftSubjectSprite: {fileID: -2274593751980099078, guid: a2137e69549c6e544a441ab78ead7c7f, type: 3}
+      RightSubjectSprite: {fileID: 5637047348223716582, guid: 69df0b0d66b6c264b88e1f3d7d1b02e5, type: 3}
       CarryOverLastEntry: 0
       Voice: {fileID: 8300000, guid: 8ee4a1c2f82a5af4ba979e5e4419997a, type: 3}
       overideBackground: 0
@@ -379,25 +391,26 @@ MonoBehaviour:
       backgroundOveride: {fileID: 0}
   - Identifier: Level 2 Intro
     DialogEntries:
-    - ActiveSpeakerName: The Keeper
-      dialogText: We feel the hum of the hives.
-      LeftSubjectSprite: {fileID: 3759682628931920898, guid: a9d59c47453027e40972495940b42b3f, type: 3}
-      RightSubjectSprite: {fileID: -6219217318133598067, guid: 35540dd0a6feaa643b6972546f394737, type: 3}
+    - ActiveSpeakerName: The Queen
+      dialogText: Nincompoops! Do they not know that the goddess Mellona has given
+        us this land to carry on our mission? Keeper, clear the area so we may build
+        more hives and destroy anyone that gets in our way.
+      LeftSubjectSprite: {fileID: -2274593751980099078, guid: a2137e69549c6e544a441ab78ead7c7f, type: 3}
+      RightSubjectSprite: {fileID: 5637047348223716582, guid: 69df0b0d66b6c264b88e1f3d7d1b02e5, type: 3}
       CarryOverLastEntry: 0
-      Voice: {fileID: 8300000, guid: d83e197dc5dbed544b79e60979279187, type: 3}
+      Voice: {fileID: 8300000, guid: 8ee4a1c2f82a5af4ba979e5e4419997a, type: 3}
       overideBackground: 0
       hideLeftSubject: 0
       hideRightSubject: 0
       hideSpeakerPanelAndText: 0
       hideDialogPanel: 0
       backgroundOveride: {fileID: 0}
-    - ActiveSpeakerName: The Queen
-      dialogText: We must continue on. We need access to more flowers, to resin,
-        to water.
-      LeftSubjectSprite: {fileID: 3759682628931920898, guid: a9d59c47453027e40972495940b42b3f, type: 3}
-      RightSubjectSprite: {fileID: -6219217318133598067, guid: 35540dd0a6feaa643b6972546f394737, type: 3}
+    - ActiveSpeakerName: The Keeper
+      dialogText: As you wish.
+      LeftSubjectSprite: {fileID: -2274593751980099078, guid: a2137e69549c6e544a441ab78ead7c7f, type: 3}
+      RightSubjectSprite: {fileID: 5637047348223716582, guid: 69df0b0d66b6c264b88e1f3d7d1b02e5, type: 3}
       CarryOverLastEntry: 0
-      Voice: {fileID: 8300000, guid: 8ee4a1c2f82a5af4ba979e5e4419997a, type: 3}
+      Voice: {fileID: 8300000, guid: d83e197dc5dbed544b79e60979279187, type: 3}
       overideBackground: 0
       hideLeftSubject: 0
       hideRightSubject: 0
@@ -410,8 +423,8 @@ MonoBehaviour:
       dialogText: No more dragging your boots. We must get to the reservoir where
         we will create the largest group of connected hives the world as ever seen.
         Post haste!
-      LeftSubjectSprite: {fileID: 3759682628931920898, guid: a9d59c47453027e40972495940b42b3f, type: 3}
-      RightSubjectSprite: {fileID: -6219217318133598067, guid: 35540dd0a6feaa643b6972546f394737, type: 3}
+      LeftSubjectSprite: {fileID: -2274593751980099078, guid: a2137e69549c6e544a441ab78ead7c7f, type: 3}
+      RightSubjectSprite: {fileID: 5637047348223716582, guid: 69df0b0d66b6c264b88e1f3d7d1b02e5, type: 3}
       CarryOverLastEntry: 0
       Voice: {fileID: 8300000, guid: 8ee4a1c2f82a5af4ba979e5e4419997a, type: 3}
       overideBackground: 0
@@ -425,8 +438,8 @@ MonoBehaviour:
     - ActiveSpeakerName: The Queen
       dialogText: My, you've become quite good at this, haven't you? I'm pleased
         to have you at my side as my knight. Now SLAY.
-      LeftSubjectSprite: {fileID: 3759682628931920898, guid: a9d59c47453027e40972495940b42b3f, type: 3}
-      RightSubjectSprite: {fileID: -6219217318133598067, guid: 35540dd0a6feaa643b6972546f394737, type: 3}
+      LeftSubjectSprite: {fileID: -2274593751980099078, guid: a2137e69549c6e544a441ab78ead7c7f, type: 3}
+      RightSubjectSprite: {fileID: 5637047348223716582, guid: 69df0b0d66b6c264b88e1f3d7d1b02e5, type: 3}
       CarryOverLastEntry: 0
       Voice: {fileID: 8300000, guid: 8ee4a1c2f82a5af4ba979e5e4419997a, type: 3}
       overideBackground: 0
@@ -437,24 +450,24 @@ MonoBehaviour:
       backgroundOveride: {fileID: 0}
   - Identifier: Level 5 Intro
     DialogEntries:
-    - ActiveSpeakerName: 
-      dialogText: You cannot set up more hives here. The rest of us need access to
-        the water supply.
-      LeftSubjectSprite: {fileID: 3759682628931920898, guid: a9d59c47453027e40972495940b42b3f, type: 3}
-      RightSubjectSprite: {fileID: -6219217318133598067, guid: 35540dd0a6feaa643b6972546f394737, type: 3}
+    - ActiveSpeakerName: Bear
+      dialogText: Stop it right now! You cannot build more hives here! The rest of
+        us need access to the water supply!
+      LeftSubjectSprite: {fileID: -2274593751980099078, guid: a2137e69549c6e544a441ab78ead7c7f, type: 3}
+      RightSubjectSprite: {fileID: 3878472819646491891, guid: 309c69b31345f9c46a0532c48154d7d2, type: 3}
       CarryOverLastEntry: 0
-      Voice: {fileID: 0}
+      Voice: {fileID: 8300000, guid: 95a8f3798b62aba4f831a9ad3171aa45, type: 3}
       overideBackground: 0
-      hideLeftSubject: 1
-      hideRightSubject: 1
-      hideSpeakerPanelAndText: 1
+      hideLeftSubject: 0
+      hideRightSubject: 0
+      hideSpeakerPanelAndText: 0
       hideDialogPanel: 0
       backgroundOveride: {fileID: 0}
     - ActiveSpeakerName: The Queen
-      dialogText: We have a divine right to this land. Out of our way or feel the
-        sting of the gods.
-      LeftSubjectSprite: {fileID: 3759682628931920898, guid: a9d59c47453027e40972495940b42b3f, type: 3}
-      RightSubjectSprite: {fileID: -6219217318133598067, guid: 35540dd0a6feaa643b6972546f394737, type: 3}
+      dialogText: '*We* have a divine right to this land. Out of our way or feel
+        the sting of the gods.'
+      LeftSubjectSprite: {fileID: -2274593751980099078, guid: a2137e69549c6e544a441ab78ead7c7f, type: 3}
+      RightSubjectSprite: {fileID: 3878472819646491891, guid: 309c69b31345f9c46a0532c48154d7d2, type: 3}
       CarryOverLastEntry: 0
       Voice: {fileID: 8300000, guid: 8ee4a1c2f82a5af4ba979e5e4419997a, type: 3}
       overideBackground: 0
@@ -470,7 +483,7 @@ MonoBehaviour:
       LeftSubjectSprite: {fileID: 0}
       RightSubjectSprite: {fileID: 0}
       CarryOverLastEntry: 0
-      Voice: {fileID: 8300000, guid: f1c4544fecb628b429c97aecbe7ccead, type: 3}
+      Voice: {fileID: 8300000, guid: 20e71043187c7024889d422c72bff74f, type: 3}
       overideBackground: 1
       hideLeftSubject: 1
       hideRightSubject: 1
@@ -498,7 +511,7 @@ MonoBehaviour:
       LeftSubjectSprite: {fileID: 0}
       RightSubjectSprite: {fileID: 0}
       CarryOverLastEntry: 0
-      Voice: {fileID: 8300000, guid: d83e197dc5dbed544b79e60979279187, type: 3}
+      Voice: {fileID: 8300000, guid: 3e3d267f26f25ba438879b454e56e78a, type: 3}
       overideBackground: 1
       hideLeftSubject: 1
       hideRightSubject: 1
@@ -511,7 +524,7 @@ MonoBehaviour:
       LeftSubjectSprite: {fileID: 0}
       RightSubjectSprite: {fileID: 0}
       CarryOverLastEntry: 0
-      Voice: {fileID: 8300000, guid: d83e197dc5dbed544b79e60979279187, type: 3}
+      Voice: {fileID: 8300000, guid: 3e3d267f26f25ba438879b454e56e78a, type: 3}
       overideBackground: 1
       hideLeftSubject: 1
       hideRightSubject: 1
@@ -524,7 +537,7 @@ MonoBehaviour:
       LeftSubjectSprite: {fileID: 0}
       RightSubjectSprite: {fileID: 0}
       CarryOverLastEntry: 0
-      Voice: {fileID: 8300000, guid: d83e197dc5dbed544b79e60979279187, type: 3}
+      Voice: {fileID: 8300000, guid: 3e3d267f26f25ba438879b454e56e78a, type: 3}
       overideBackground: 1
       hideLeftSubject: 1
       hideRightSubject: 1
