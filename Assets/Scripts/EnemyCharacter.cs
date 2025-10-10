@@ -19,6 +19,20 @@ public class EnemyCharacter : MonoBehaviour
 	public MainEnemyState state = MainEnemyState.MovingIntoTokenRange;
 	public AttackState attackState = AttackState.Lunging;
 
+	Animator animator;
+
+	public GameObject childObject;
+
+	public GameObject attackObject;
+	public float traceRadius = 1.5f;
+
+	Vector3 positionLastFrame;
+	Vector3 positionThisFrame;
+	Vector3 attackVelocityDir;
+
+	public float AttackObjectReach = 3f;
+
+	Vector3 playerPosUpdated;
 	void Awake() {
 		agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
 		// ✅ Stop the agent from rotating automatically
@@ -28,6 +42,7 @@ public class EnemyCharacter : MonoBehaviour
 	}
 	void Start()
 	{
+		animator = childObject.GetComponent<Animator>();
 		if (player == null)
 		{
 			player = GameObject.FindWithTag("Player");
@@ -37,6 +52,10 @@ public class EnemyCharacter : MonoBehaviour
 
 		
 		GetTokenSystem.RegisterEnemy(this);
+
+		positionThisFrame = this.transform.position;
+		positionLastFrame = this.transform.position;
+
 	}
 
 	// Update is called once per frame
@@ -51,6 +70,7 @@ public class EnemyCharacter : MonoBehaviour
 		attackState = (AttackState)newAttackStateBlackboardVariable.ObjectValue;
 
 		Debug.Log(newStateBlackboardVariable.ObjectValue);
+		playerPosUpdated = player.transform.position;
 	}
 
 	float DistanceBetweenSelfAndPlayer() {
@@ -64,17 +84,60 @@ public class EnemyCharacter : MonoBehaviour
 	}
 
 	public void Attacking(){
+		positionLastFrame = positionThisFrame;
+		positionThisFrame = this.transform.position;
+		Vector3 delta = positionThisFrame - positionLastFrame;
+
+
 		float distanceToPlayer = DistanceBetweenSelfAndPlayer();
 		if (attackState == AttackState.Lunging && (attackDistance <= distanceToPlayer - 0.5f)) {
 			Transform playerLocation = player.transform;
 			agent.SetDestination(playerLocation.position);
+			if (delta != Vector3.zero)
+				attackVelocityDir = delta.normalized; // Unit vector (magnitude = 1)
+			else
+				attackVelocityDir = Vector3.zero;
+
 		} else if (attackState == AttackState.Lunging && (attackDistance > distanceToPlayer - 0.75f)) {
 			Engage();	
-			behaviorAgent.BlackboardReference.SetVariableValue("Main Enemy State", (object)AttackState.Engaging);
+			behaviorAgent.BlackboardReference.SetVariableValue("Attack State", (object)AttackState.Engaging);
 		}
 	}
 
+	public void SpawnAttackObject() {
+		Vector3 playerPos = playerPosUpdated;
+		
+		Vector3 fromPlayerToEnemy = (playerPos - this.transform.position).normalized;
+		Vector3 spawnPos = this.transform.position + (fromPlayerToEnemy * AttackObjectReach);
+
+		// 2. Spawn the prefab
+		GameObject spawnedAttackObject = Instantiate(attackObject, spawnPos, transform.rotation);
+		AttackObject ao = spawnedAttackObject.GetComponent<AttackObject>();
+		ao.attackerVelocity = fromPlayerToEnemy;
+	}
+
+	public void FinishedEngagement() {
+
+		behaviorAgent.BlackboardReference.SetVariableValue("Attack State", (object)AttackState.Lunging);
+		behaviorAgent.BlackboardReference.SetVariableValue("Main Enemy State", (object)MainEnemyState.MovingIntoTokenRange);
+		//MoveNearPlayer();
+		//
+
+		// 🧩 Clear out any residual path data
+		agent.ResetPath();
+
+		// 🧩 Re-enable movement
+		agent.isStopped = false;
+		agent.updatePosition = true;
+		agent.updateRotation = false; // since you disabled it in Awake
+		agent.updateUpAxis = false;
+
+		// 🧩 Force a re-evaluation of move behavior
+		MoveNearPlayer();
+	}
+
 	public void Engage() {
+		animator.SetTrigger("Attack");
 		//Run Attack Anim
 	}
 
@@ -88,11 +151,6 @@ public class EnemyCharacter : MonoBehaviour
 		return numTickets;
 	}
 
-
-
-
-
-
 	public void MoveIntoTokenAttackRangeAction() {
 		//Debug.Log("Could not find navigable point near player.");
 		if (!agent.pathPending && agent.remainingDistance < 2f)
@@ -101,10 +159,12 @@ public class EnemyCharacter : MonoBehaviour
 		}
 
 		if ((DistanceBetweenSelfAndPlayer() <= (approachDistance + 3)) && (state == MainEnemyState.MovingIntoTokenRange)) {
+			//Debug.Log($"{gameObject.name} switching to MovingIntoTokenRange. Distance = {DistanceBetweenSelfAndPlayer():F2}, Current State = {state}");
 			behaviorAgent.BlackboardReference.SetVariableValue("Main Enemy State", (object)MainEnemyState.WaitingForToken);
 		} else if ((DistanceBetweenSelfAndPlayer() > (approachDistance + 5)) && (state == MainEnemyState.WaitingForToken)) {
 			behaviorAgent.BlackboardReference.SetVariableValue("Main Enemy State", (object)MainEnemyState.MovingIntoTokenRange);
 		} else if (tokens > 0) {
+			tokens--;
 			behaviorAgent.BlackboardReference.SetVariableValue("Main Enemy State", (object)MainEnemyState.Attacking);
 		}
 
@@ -127,7 +187,7 @@ public class EnemyCharacter : MonoBehaviour
 		}
 		else
 		{
-			//Debug.LogWarning("Could not find navigable point near player.");
+			MoveNearPlayerFallback();
 		}
 	}
 
@@ -136,7 +196,7 @@ public class EnemyCharacter : MonoBehaviour
 	{
 		const int maxAttempts = 20;
 		float halfRange = desiredRange * 0.5f;
-		float traceRadius = 1.5f; // ← thickness of the line trace (tweak as needed)
+		//traceRadius = 1.5f; // ← thickness of the line trace (tweak as needed)
 		LayerMask playerMask = LayerMask.GetMask("Player"); // ensure your player is on the "Player" layer
 
 		for (int i = 0; i < maxAttempts; i++)
@@ -193,4 +253,57 @@ public class EnemyCharacter : MonoBehaviour
 		result = transform.position;
 		return false;
 	}
+
+
+	void MoveNearPlayerFallback()
+	{
+		if (player == null || agent == null) return;
+
+		Vector3 playerPos = player.transform.position;
+
+		// ✅ Try to find a valid point near the player
+		Vector3 targetPoint;
+		if (TryGetNavigablePointNear(playerPos, approachDistance, out targetPoint))
+		{
+			agent.SetDestination(targetPoint);
+			Debug.Log($"{name} moving near player at {targetPoint}");
+			return;
+		}
+
+		// ⚠️ Could not find a nearby navigable point, so fallback
+		Debug.LogWarning($"{name} could not find navigable point near player. Trying to move away...");
+
+		Vector3 awayDir = (transform.position - playerPos).normalized;
+		const int maxAttempts = 15;
+		float searchRadius = approachDistance;
+		bool found = false;
+		Vector3 chosenPoint = transform.position;
+
+		for (int i = 0; i < maxAttempts; i++)
+		{
+			// 🌀 Add some random spread while keeping overall "away from player" direction
+			Vector2 randomOffset2D = Random.insideUnitCircle * (searchRadius * 0.5f);
+			Vector3 randomOffset3D = new Vector3(randomOffset2D.x, 0f, randomOffset2D.y);
+
+			// Base away direction, with slight randomness
+			Vector3 candidate = transform.position + awayDir * searchRadius + randomOffset3D;
+
+			UnityEngine.AI.NavMeshHit hit;
+			if (UnityEngine.AI.NavMesh.SamplePosition(candidate, out hit, 2f, UnityEngine.AI.NavMesh.AllAreas))
+			{
+				agent.SetDestination(hit.position);
+				chosenPoint = hit.position;
+				found = true;
+				Debug.Log($"{name} fallback moving AWAY from player to random valid point {hit.position}");
+				break;
+			}
+		}
+
+		if (!found)
+		{
+			Debug.LogWarning($"{name} could not find *any* navigable point away from player after {maxAttempts} attempts.");
+			agent.ResetPath();
+		}
+	}
+
 }

@@ -32,7 +32,7 @@ public class TokenSystem : MonoBehaviour
 		}
 		else
 		{
-			Debug.LogWarning("enemyLotteryTickets is empty!");
+			//Debug.LogWarning("enemyLotteryTickets is empty!");
 		}
 
 	}

@@ -19,6 +19,14 @@ public partial class AttackAction : Action
 
 	protected override Status OnUpdate()
 	{
+		if(owner == null) {
+
+			owner = this.GameObject;
+				if(owner == null) {
+					return Status.Success;
+				}
+		} 
+		enemyCharacter = owner.GetComponent<EnemyCharacter>();
 		enemyCharacter.Attacking();
 		return Status.Success;
 	}
