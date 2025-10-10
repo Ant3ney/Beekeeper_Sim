@@ -175,6 +175,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: StartSceneDialogDriver
       objectReference: {fileID: 0}
+    - target: {fileID: 2639612760421821930, guid: ba26abacbcc732e46979de77648593c9, type: 3}
+      propertyPath: dialogToPlay
+      value: Intro Animatic
+      objectReference: {fileID: 0}
     - target: {fileID: 3477888342455520465, guid: ba26abacbcc732e46979de77648593c9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4.7383275
