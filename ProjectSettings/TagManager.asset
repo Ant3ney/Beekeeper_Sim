@@ -11,6 +11,7 @@ TagManager:
   - optional_background_obj
   - dialog_panel_obj
   - speaker_panel_obj
+  - Bee
   layers:
   - Default
   - TransparentFX
