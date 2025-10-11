@@ -12,6 +12,9 @@ TagManager:
   - dialog_panel_obj
   - speaker_panel_obj
   - Bee
+  - BeeCloud
+  - Hive
+  - Enemy
   layers:
   - Default
   - TransparentFX

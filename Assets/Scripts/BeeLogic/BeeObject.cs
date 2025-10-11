@@ -96,12 +96,17 @@ public class BeeObject : MonoBehaviour
         }
         else if (curMoveState == MoveState.FreeCloud)
         {
-            mRigidbody.linearVelocity = headedVector;
+            mRigidbody.linearVelocity = headedVector * beeRoamSpeed;
             Vector3 myPos = myTransform.position;
             Vector3 cloudPos = myCloudTransform.position;
             float radius = myCloud.radius;
             Vector2 meToCloud = cloudPos - myPos;
             float distance = meToCloud.magnitude;
+            
+            if (distance == 0)
+            {
+                meToCloud = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f));
+            }
 
             Vector2 curDir = mRigidbody.linearVelocity;
             float dotval = Vector2.Dot(curDir.normalized, meToCloud.normalized);   
@@ -127,6 +132,7 @@ public class BeeObject : MonoBehaviour
 
         }
     }
+
     
 
     private Vector2 GetCorrectDirectionForCloud()
@@ -135,6 +141,11 @@ public class BeeObject : MonoBehaviour
         Vector3 myPos = myTransform.position;
         
         Vector3 meToCloud = Vector3.Normalize(cloudPos - myPos);
+        if (meToCloud.magnitude == 0)
+        {
+            meToCloud = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f));
+        }
+        
         //90 degree randomization, means 0.5 dot product
         //first end
         float angle = Mathf.PI / 4;
@@ -158,8 +169,8 @@ public class BeeObject : MonoBehaviour
             SetMoveState(MoveState.FreeCloud);
         }
     }
-    
-    private void OnCollisionEnter2D(Collision2D other)
+
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("BeeCloud"))
         {   
