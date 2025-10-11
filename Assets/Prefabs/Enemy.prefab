@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8631687142911396541}
   m_Layer: 0
   m_Name: EnemyAnimation
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -139,6 +139,7 @@ MonoBehaviour:
   currentHealth: 100
   maxHealth: 100
   isPlayer: 0
+  healthLeft: {fileID: 0}
 --- !u!1 &8283151703366814753
 GameObject:
   m_ObjectHideFlags: 0
@@ -336,3 +337,4 @@ MonoBehaviour:
   currentHealth: 100
   maxHealth: 100
   isPlayer: 0
+  healthLeft: {fileID: 0}

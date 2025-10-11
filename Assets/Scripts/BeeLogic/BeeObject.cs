@@ -24,16 +24,22 @@ public class BeeObject : MonoBehaviour
     private Vector2 headedVector;
     private bool hasDirection = false;
     private bool hasChosenSince = false;
+    private bool doHit = false;
 
     [Header("Game Feel Parameters")] 
     public float beeRoamSpeed = 2f;
     public float beeReturnSpeed = 8f;
     public float snapCloseness = 0.02f;
+
+    public float damagePerInterval = 1f;
+    public float damageInterval = 0.25f;
+    public float damageIntervalTimer = 0.0f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
     {
         //TODO:change/optimize later
         myCloud = FindFirstObjectByType<BeeManager>();
+        
         
         scInstance = BeeCreation.Instance;
         initialized = false;
@@ -44,11 +50,16 @@ public class BeeObject : MonoBehaviour
         myTransform = transform;
         myCloudTransform = myCloud.transform;
         
+        
+        
         SetMoveState(MoveState.FreeCloud);
     }
 
     public void FixedUpdate()
     {
+        //fixed update is called before collision
+        doHit = false;
+        
         if (!scInstance) scInstance = BeeCreation.Instance;
             
         if (scInstance && !initialized)
@@ -58,6 +69,14 @@ public class BeeObject : MonoBehaviour
             initialized = true;
         }
         //MovingFunction();
+
+        damageIntervalTimer += Time.fixedDeltaTime;
+        if (damageIntervalTimer >= damageInterval)
+        {
+            damageIntervalTimer -= damageInterval;
+            doHit = true;
+        }
+        
     }
     
     
@@ -175,6 +194,34 @@ public class BeeObject : MonoBehaviour
         if (other.gameObject.CompareTag("BeeCloud"))
         {   
             CollideWithPlayer();
+        }
+
+       
+    }
+
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        
+        GameObject enemyObj = other.gameObject;
+        if (enemyObj.CompareTag("Enemy"))
+        {
+            Debug.Log("Is Colliding with Enemy");
+        }
+        
+        if (curMoveState != MoveState.FreeCloud &&
+            curMoveState != MoveState.Returning)
+        {
+            if (doHit && enemyObj.CompareTag("Enemy"))
+            {
+                //i hate having to do get components on update but there's not much else we can do
+                TokenSystem.tsInstance.enemyHealths.TryGetValue(enemyObj, out HealthSystem enemyHealth);
+                if (!enemyHealth) enemyHealth = enemyObj.GetComponent<HealthSystem>();
+                if (enemyHealth)
+                {
+                    enemyHealth.reciveDamage(damagePerInterval);
+                }
+            }
+            
         }
     }
 

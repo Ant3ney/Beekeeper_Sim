@@ -140,7 +140,7 @@ GameObject:
   - component: {fileID: -1731190431627016791}
   m_Layer: 0
   m_Name: RangedEnemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -320,3 +320,4 @@ MonoBehaviour:
   currentHealth: 100
   maxHealth: 100
   isPlayer: 0
+  healthLeft: {fileID: 0}
