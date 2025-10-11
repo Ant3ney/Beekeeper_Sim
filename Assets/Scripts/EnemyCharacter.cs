@@ -151,6 +151,11 @@ public class EnemyCharacter : MonoBehaviour
 		return numTickets;
 	}
 
+	public void onDeath() {
+		GetTokenSystem.UnregisterEnemy(this);
+		Destroy(this.gameObject);
+	}
+
 	public void MoveIntoTokenAttackRangeAction() {
 		//Debug.Log("Could not find navigable point near player.");
 		if (!agent.pathPending && agent.remainingDistance < 2f)

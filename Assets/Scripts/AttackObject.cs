@@ -9,6 +9,8 @@ public class AttackObject : MonoBehaviour
 	public float attackObjectForce = 3f;
 	public bool isRanged = false;
 	public float rangedSpeed = 3f;
+
+	public float dammage = 30;
 	// Start is called once before the first execution of Update after the MonoBehaviour is created
 	void Start()
 	{
@@ -37,6 +39,7 @@ public class AttackObject : MonoBehaviour
 		Debug.Log("Ball overlapped with: " + other.gameObject.name);
 		GameObject otherObj = other.gameObject;
 		EnemyCharacter enemy = otherObj.GetComponent<EnemyCharacter>();
+		bool isPlayer = otherObj.CompareTag("Player");
 
 		Rigidbody2D otherRb = otherObj.GetComponent<Rigidbody2D>();
 
@@ -46,9 +49,11 @@ public class AttackObject : MonoBehaviour
 			if (enemy) {
 
 				otherRb.AddForce(attackerVelocity.normalized * attackObjectForce / 200, ForceMode2D.Impulse);
-			} else {
-
+			} else if (isPlayer) {
+				//Assuming it's a player
 				otherRb.AddForce(attackerVelocity.normalized * attackObjectForce, ForceMode2D.Impulse);
+				HealthSystem healthSystem = otherObj.GetComponent<HealthSystem>();
+				healthSystem.reciveDamage(dammage);
 				Destroy(gameObject);
 			}
 			Debug.Log("Applied force to " + otherObj.name);

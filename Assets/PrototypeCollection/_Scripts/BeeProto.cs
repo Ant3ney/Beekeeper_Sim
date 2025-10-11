@@ -54,4 +54,17 @@ public class BeeProto : MonoBehaviour
 		Destroy(gameObject);
        }
     }
+
+    void OnCollisionStay2D(Collision2D collision)
+    {
+ //Debug.Log("Still colliding with " + collision.gameObject.name);
+	    GameObject otherObj = collision.gameObject;
+	    HealthSystem otherhealth = otherObj.GetComponent<HealthSystem>();
+	    EnemyCharacter enemy = otherObj.GetComponent<EnemyCharacter>();
+	    if(enemy) {
+	     //Debug.Log("Still colliding with " + collision.gameObject.name);
+		otherhealth.reciveDamage(20 * Time.deltaTime);
+	    }
+
+    }
 }
