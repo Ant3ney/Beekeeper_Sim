@@ -16,7 +16,7 @@ public class TutorialDriver : MonoBehaviour
     }
 
     public void StartGame() {
-    		SceneManager.LoadScene("PlaceHolderGameplay");
+    		SceneManager.LoadScene("PlaceHolderEnemyAIGameplay");
 		Debug.Log("Finished dialog");
     }
 
