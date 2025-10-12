@@ -1,3 +1,6 @@
+using System.Collections;
+using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -12,14 +15,26 @@ public class PlayerController : MonoBehaviour
     [HideInInspector] public BeeCreation beeCreation;
 
     public float myHealth = 100.0f;
+    public float myMaxHealth = 100.0f;
 
     private float invincibleTimer = 0.0f;
-    public float invincibleTime = 0.75f;
+    public float invincibleTime = 2.0f;
     private bool isInvincible = false;
+
+    private bool inHitstun = false;
+    private float hitstunTimer = 0.0f;
+    private float hitStunTime = 1.0f;
+
+    private Vector2 addedForce = Vector2.zero;
+
+    public static PlayerController pcInstance;
+    public RectTransform healthLeft;
 	
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        pcInstance = this;
+        
         mRigidbody2D = GetComponent<Rigidbody2D>();
         myCloud = FindFirstObjectByType<BeeManager>();
         beeCreation = FindFirstObjectByType<BeeCreation>();
@@ -27,6 +42,13 @@ public class PlayerController : MonoBehaviour
         myCloudTransform = myCloud.transform;
         lastDirection = new Vector2(1, 1);
         isInvincible = false;
+    }
+
+    void Update()
+    {
+        if (healthLeft)
+        {
+        }
     }
 
     // Update is called once per frame
@@ -37,19 +59,11 @@ public class PlayerController : MonoBehaviour
 
         Vector3 move = new Vector3(moveX, moveZ, 0);
         mRigidbody2D.linearVelocity = speed * move;
+        mRigidbody2D.linearVelocity += addedForce;
 
         if(move.magnitude >= 0.05f) lastDirection = new Vector2(Mathf.Sign(move.x), Mathf.Sign(move.y));
         //transform.position += 5f * Time.deltaTime * move;
-
-        if (isInvincible)
-        {
-            invincibleTimer += Time.fixedDeltaTime;
-            if (invincibleTimer >= invincibleTime)
-            {
-                invincibleTimer = 0.0f;
-                isInvincible = false;
-            }
-        }
+        
     }
 
     void OnTriggerStay2D(Collider2D other)
@@ -80,8 +94,53 @@ public class PlayerController : MonoBehaviour
         {
             EnemyCharacter ec = collision.gameObject.GetComponent<EnemyCharacter>();
             float damageTake = ec.enemyDamage;
-            isInvincible = true;
-            myHealth -= damageTake;
+
+            Vector2 movePos = (transform.position - 
+                               collision.transform.position).normalized * 1.5f;
+            
+            TakeDamage(damageTake, movePos);
         }
+    }
+
+    public IEnumerator InvincibleTime()
+    {
+        isInvincible = true;
+        
+        while (invincibleTimer < invincibleTime)
+        {
+            invincibleTimer += Time.fixedDeltaTime;
+            isInvincible = true;
+            yield return null;
+        }
+
+        isInvincible = false;
+        invincibleTimer = 0.0f;
+    }
+
+    public IEnumerator HitstunTime(Vector2 hitForce)
+    {
+        inHitstun = true;
+        addedForce = hitForce;
+
+        while (hitstunTimer < hitStunTime)
+        {
+            hitstunTimer += Time.fixedDeltaTime;
+            inHitstun = true;
+            yield return null;
+        }
+
+        addedForce = Vector2.zero;
+        inHitstun = false;
+        hitstunTimer = 0.0f;
+    }
+    
+    
+
+    public void TakeDamage(float damage, Vector2 hitForce)
+    {
+        StartCoroutine(InvincibleTime());
+        StartCoroutine(HitstunTime(hitForce));
+        
+        myHealth -= damage;
     }
 }
