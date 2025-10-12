@@ -182,6 +182,7 @@ public class EnemyCharacter : MonoBehaviour
 
 	public void onDeath() {
 		GetTokenSystem.UnregisterEnemy(this);
+		GetKSequencer.EnemyDied();
 		Destroy(this.gameObject);
 	}
 

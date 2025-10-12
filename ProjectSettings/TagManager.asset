@@ -15,6 +15,9 @@ TagManager:
   - BeeCloud
   - Hive
   - Enemy
+  - MusicSystem
+  - Sequencer
+  - DialogSystem
   layers:
   - Default
   - TransparentFX
