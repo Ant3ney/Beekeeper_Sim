@@ -13704,8 +13704,8 @@ MonoBehaviour:
   musicClip: {fileID: 8300000, guid: 0a556d26b8789f541ad17ca02e888194, type: 3}
   loop: 1
   MusicVolume: 0.5
-  beeSound: {fileID: 8300000, guid: 79755039cddde934582225e9501883d1, type: 3}
-  beeVolume: 0.1
+  beeSound: {fileID: 8300000, guid: e1320546e500eb54e8c2f45da681915b, type: 3}
+  beeVolume: 0.5
   playIntroDialog: 0
   TimeTillWin: 300
 --- !u!1 &432534413
