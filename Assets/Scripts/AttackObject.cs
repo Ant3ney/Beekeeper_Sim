@@ -10,15 +10,11 @@ public class AttackObject : MonoBehaviour
 	public bool isRanged = false;
 	public float rangedSpeed = 3f;
 
-<<<<<<< Updated upstream
-	public float dammage = 30;
-
 	public AudioClip audioClipImpactSoundEffect;
-=======
+	
 	public float damage = 20;
 	private Rigidbody2D rb;
 	
->>>>>>> Stashed changes
 	// Start is called once before the first execution of Update after the MonoBehaviour is created
 	void Start()
 	{
