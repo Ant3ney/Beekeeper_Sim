@@ -196,20 +196,18 @@ public class BeeObject : MonoBehaviour
         {   
             CollideWithPlayer();
         }
-
-
-       
     }
 
     private void OnTriggerStay2D(Collider2D other)
     {
         
         GameObject enemyObj = other.gameObject;
-        if (enemyObj.CompareTag("Enemy"))
+        /*if (enemyObj.CompareTag("Enemy"))
         {
             //if it is time to hit...
             if(doHit) Debug.Log("Washit");
         }
+        */
         
         if (curMoveState != MoveState.FreeCloud &&
             curMoveState != MoveState.Returning)

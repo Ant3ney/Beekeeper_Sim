@@ -15,6 +15,7 @@ TagManager:
   - BeeCloud
   - Hive
   - Enemy
+  - Projectile
   layers:
   - Default
   - TransparentFX
