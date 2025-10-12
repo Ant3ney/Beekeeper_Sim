@@ -10771,11 +10771,11 @@ MonoBehaviour:
   enemyMaxSpawnTime: 150
   enemyDelayTillSpawn: 2
   enemySprite: {fileID: -2566791840715176196, guid: a45c9984d293aa649bbeff371554820c, type: 3}
-  musicClip: {fileID: 8300000, guid: c85c56772ecb1e649b63a93cee683c17, type: 3}
+  musicClip: {fileID: 8300000, guid: 0a556d26b8789f541ad17ca02e888194, type: 3}
   loop: 1
   MusicVolume: 0.5
-  beeSound: {fileID: 8300000, guid: 97f374302254ee7419cf13760d85e09c, type: 3}
-  beeVolume: 0.5
+  beeSound: {fileID: 8300000, guid: 79755039cddde934582225e9501883d1, type: 3}
+  beeVolume: 0.1
   playIntroDialog: 0
   TimeTillWin: 300
 --- !u!1 &432534413
