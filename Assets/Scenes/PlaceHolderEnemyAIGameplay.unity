@@ -22149,11 +22149,11 @@ PrefabInstance:
       objectReference: {fileID: 1985117296}
     - target: {fileID: 8215215579206175247, guid: b306fcfecedc8564da296a65277ad08f, type: 3}
       propertyPath: m_Size.x
-      value: 1
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 8215215579206175247, guid: b306fcfecedc8564da296a65277ad08f, type: 3}
       propertyPath: m_Size.y
-      value: 1
+      value: 1.8
       objectReference: {fileID: 0}
     - target: {fileID: 8215215579206175247, guid: b306fcfecedc8564da296a65277ad08f, type: 3}
       propertyPath: m_Offset.x
