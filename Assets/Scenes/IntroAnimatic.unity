@@ -139,6 +139,10 @@ PrefabInstance:
       propertyPath: dialogToPlay
       value: Intro Animatic
       objectReference: {fileID: 0}
+    - target: {fileID: 2639612760421821930, guid: ba26abacbcc732e46979de77648593c9, type: 3}
+      propertyPath: dialogGameObject
+      value: 
+      objectReference: {fileID: 1870433960}
     - target: {fileID: 3477888342455520465, guid: ba26abacbcc732e46979de77648593c9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4.7383275
@@ -414,6 +418,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d57fabe004673584488944551bda90b1, type: 3}
+--- !u!1 &1870433960 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2725156272805157714, guid: d57fabe004673584488944551bda90b1, type: 3}
+  m_PrefabInstance: {fileID: 1870433959}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1916574743
 GameObject:
   m_ObjectHideFlags: 0

@@ -6,7 +6,9 @@ public static class GetDialogSystem
 		Debug.Log("Dialog Getter: " + identifier);
 		GameObject dialogSystemObj = FindDialogObject();
 		dialogSystemObj.SetActive(true);
-		DialogSystem dialogSystem = GameObject.Find("DialogSystem").GetComponent<DialogSystem>();
+		DialogSystem dialogSystem = dialogSystemObj.GetComponent<DialogSystem>();
+
+		//GameObject.Find("DialogSystem").GetComponent<DialogSystem>();
 		dialogSystem.RunDialog(identifier, dialogSettings);
 	}
 
