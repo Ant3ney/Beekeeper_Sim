@@ -200,8 +200,9 @@ MonoBehaviour:
   attackObject: {fileID: 6792521220820760721, guid: 24611e30c68fc664a8802b46686c1b8e, type: 3}
   traceRadius: 1.5
   AttackObjectReach: 1.5
-  attackStartSoundEffect: {fileID: 8300000, guid: 5272d4aadfcff3745b2836ae5427f536, type: 3}
-  attackHitSoundEffect: {fileID: 8300000, guid: 2858f213f80f5074fa09e3ccac9a6fe3, type: 3}
+  enemyDamage: 20
+  attackStartSoundEffect: {fileID: 8300000, guid: 7e53f7f0bfe81fc43858ec4c05e186aa, type: 3}
+  attackHitSoundEffect: {fileID: 8300000, guid: 139bde2ec6afeb74599bede313315660, type: 3}
 --- !u!58 &6816943042605507016
 CircleCollider2D:
   m_ObjectHideFlags: 0
