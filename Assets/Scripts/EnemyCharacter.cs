@@ -59,7 +59,7 @@ public class EnemyCharacter : MonoBehaviour
 
 		behaviorAgent = GetComponent<BehaviorGraphAgent>();
 
-		Debug.Log("Was registered");
+		//Debug.Log("Was registered");
 		GetTokenSystem.RegisterEnemy(this);
 
 		positionThisFrame = this.transform.position;
@@ -70,7 +70,6 @@ public class EnemyCharacter : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		/*
 		BlackboardVariable<MainEnemyState> newStateBlackboardVariable;
 		behaviorAgent.BlackboardReference.GetVariable("Main Enemy State", out newStateBlackboardVariable);
 		state = (MainEnemyState)newStateBlackboardVariable.ObjectValue;
@@ -79,14 +78,24 @@ public class EnemyCharacter : MonoBehaviour
 		behaviorAgent.BlackboardReference.GetVariable("Attack State", out newAttackStateBlackboardVariable);
 		attackState = (AttackState)newAttackStateBlackboardVariable.ObjectValue;
 
-		Debug.Log(newStateBlackboardVariable.ObjectValue);
 		playerPosUpdated = player.transform.position;
-		*/
+
+
+		//Debug.Log(newStateBlackboardVariable.ObjectValue);
+		//BlackboardVariable<MainEnemyState> newStateBlackboardVariable;
+		//behaviorAgent.BlackboardReference.GetVariable("Main Enemy State", out newStateBlackboardVariable);
+		//state = (MainEnemyState)newStateBlackboardVariable.ObjectValue;
+	//	Debug.Log(newStateBlackboardVariable.ObjectValue);
 	}
 
 	float DistanceBetweenSelfAndPlayer() {
 		if (player == null)
+		{
+			player = GameObject.FindWithTag("Player");
+				if (player == null) {
 			return Mathf.Infinity;
+				}
+		}
 
 		Vector2 selfPos = transform.position;
 		Vector2 playerPos = player.transform.position;
@@ -101,6 +110,7 @@ public class EnemyCharacter : MonoBehaviour
 
 
 		float distanceToPlayer = DistanceBetweenSelfAndPlayer();
+		//Debug.Log("distanceToPlayer: " + distanceToPlayer + " vs attackDistance: " + attackDistance);
 		if (attackState == AttackState.Lunging && (attackDistance <= distanceToPlayer - 0.5f)) {
 			Transform playerLocation = player.transform;
 			agent.SetDestination(playerLocation.position);
@@ -160,6 +170,7 @@ public class EnemyCharacter : MonoBehaviour
 	}
 
 	public void AwwardToken(int ammount) {
+		Debug.Log("Given Token");
 		tokens += ammount;
 	}
 
