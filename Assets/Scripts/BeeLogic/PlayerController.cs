@@ -23,7 +23,7 @@ public class PlayerController : MonoBehaviour
 
     private bool inHitstun = false;
     private float hitstunTimer = 0.0f;
-    private float hitStunTime = 0.5f;
+    private float hitStunTime = 0.35f;
 
     public int startBeeNumber = 40;
     public Transform beeParent;
@@ -125,7 +125,7 @@ public class PlayerController : MonoBehaviour
             float damageTake = ec.enemyDamage;
 
             Vector2 movePos = (transform.position - 
-                               collision.transform.position).normalized * 3f;
+                               collision.transform.position).normalized * 5f;
             
             TakeDamage(damageTake, movePos);
         }

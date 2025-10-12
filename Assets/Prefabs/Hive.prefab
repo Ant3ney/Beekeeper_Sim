@@ -148,4 +148,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hiveRespawnCooldown: 16
-  addFromHive: 4
+  addFromHive: 10

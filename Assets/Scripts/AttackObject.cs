@@ -82,7 +82,7 @@ public class AttackObject : MonoBehaviour
 		if (oObj.CompareTag("Player"))
 		{
 			PlayerController pc = PlayerController.pcInstance;
-			Vector2 moveForce = rb.linearVelocity.normalized * 1.5f;
+			Vector2 moveForce = rb.linearVelocity.normalized * 5f;
 			pc.TakeDamage(damage, moveForce);
 			Destroy(gameObject);
 		}
@@ -98,6 +98,10 @@ public class AttackObject : MonoBehaviour
 				Destroy(gameObject);
 			}
 		}
-		
+
+		if (oObj.CompareTag("Collider"))
+		{
+			Destroy(gameObject);
+		}
 	}
 }

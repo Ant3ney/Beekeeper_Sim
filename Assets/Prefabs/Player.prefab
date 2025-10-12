@@ -116,6 +116,8 @@ MonoBehaviour:
   startBeeNumber: 55
   beeParent: {fileID: 0}
   healthLeft: {fileID: 0}
+  flashRedTime: 0.15
+  flashRedTimer: 0
 --- !u!114 &6156390515666890866
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -170,13 +172,13 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1261641451511190173}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 1
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDamping: 0
-  m_AngularDamping: 0.05
+  m_AngularDamping: 0
   m_GravityScale: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -188,7 +190,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &6212688272443942533
 BoxCollider2D:
   m_ObjectHideFlags: 0

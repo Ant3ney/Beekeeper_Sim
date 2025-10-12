@@ -13682,6 +13682,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1236866225849433221, guid: 92cc75b88c41f9f4a841bf435900d7d1, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1261641451511190173, guid: 92cc75b88c41f9f4a841bf435900d7d1, type: 3}
       propertyPath: m_Name
       value: Player
@@ -13698,6 +13702,22 @@ PrefabInstance:
       propertyPath: healthLeft
       value: 
       objectReference: {fileID: 1985117296}
+    - target: {fileID: 6212688272443942533, guid: 92cc75b88c41f9f4a841bf435900d7d1, type: 3}
+      propertyPath: m_Size.x
+      value: 0.92810535
+      objectReference: {fileID: 0}
+    - target: {fileID: 6212688272443942533, guid: 92cc75b88c41f9f4a841bf435900d7d1, type: 3}
+      propertyPath: m_Size.y
+      value: 1.300364
+      objectReference: {fileID: 0}
+    - target: {fileID: 6212688272443942533, guid: 92cc75b88c41f9f4a841bf435900d7d1, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.005136013
+      objectReference: {fileID: 0}
+    - target: {fileID: 6212688272443942533, guid: 92cc75b88c41f9f4a841bf435900d7d1, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.26507688
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8744787698287972790, guid: 92cc75b88c41f9f4a841bf435900d7d1, type: 3}
     m_RemovedGameObjects:
@@ -14139,7 +14159,7 @@ GameObject:
   - component: {fileID: 655623409}
   m_Layer: 0
   m_Name: BoxCollider (2)
-  m_TagString: Untagged
+  m_TagString: Collider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14475,7 +14495,7 @@ GameObject:
   - component: {fileID: 744524031}
   m_Layer: 0
   m_Name: BoxCollider (7)
-  m_TagString: Untagged
+  m_TagString: Collider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20114,7 +20134,7 @@ GameObject:
   - component: {fileID: 1124385894}
   m_Layer: 0
   m_Name: BoxCollider (4)
-  m_TagString: Untagged
+  m_TagString: Collider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20371,7 +20391,7 @@ GameObject:
   - component: {fileID: 1206601441}
   m_Layer: 0
   m_Name: BoxCollider (1)
-  m_TagString: Untagged
+  m_TagString: Collider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21123,7 +21143,7 @@ GameObject:
   - component: {fileID: 1500571762}
   m_Layer: 0
   m_Name: BoxCollider (6)
-  m_TagString: Untagged
+  m_TagString: Collider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21201,7 +21221,7 @@ GameObject:
   - component: {fileID: 1504024595}
   m_Layer: 0
   m_Name: BoxCollider (3)
-  m_TagString: Untagged
+  m_TagString: Collider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21697,7 +21717,7 @@ GameObject:
   - component: {fileID: 1581563087}
   m_Layer: 0
   m_Name: BoxCollider (5)
-  m_TagString: Untagged
+  m_TagString: Collider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -22087,7 +22107,7 @@ GameObject:
   - component: {fileID: 1804307355}
   m_Layer: 0
   m_Name: BoxCollider
-  m_TagString: Untagged
+  m_TagString: Collider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

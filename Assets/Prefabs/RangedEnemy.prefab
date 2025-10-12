@@ -324,5 +324,5 @@ MonoBehaviour:
   maxHealth: 100
   isPlayer: 0
   healthLeft: {fileID: 0}
-  flashRedTime: 0.2
+  flashRedTime: 0.15
   flashRedTimer: 0

@@ -211,6 +211,14 @@ MonoBehaviour:
   lastDirection: {x: 0, y: 0}
   myCloud: {fileID: 0}
   beeCreation: {fileID: 0}
+  myHealth: 100
+  myMaxHealth: 100
+  invincibleTime: 2
+  startBeeNumber: 20
+  beeParent: {fileID: 0}
+  healthLeft: {fileID: 0}
+  flashRedTime: 0.25
+  flashRedTimer: 0
 --- !u!114 &2626869189966558230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -227,6 +235,8 @@ MonoBehaviour:
   maxHealth: 100
   isPlayer: 1
   healthLeft: {fileID: 0}
+  flashRedTime: 0.25
+  flashRedTimer: 0
 --- !u!1 &1720598065036539759
 GameObject:
   m_ObjectHideFlags: 0

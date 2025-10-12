@@ -19,6 +19,7 @@ public class BeeManager : MonoBehaviour
     private Vector2 lastPosition;
 
     private Vector2 lastDriftPosition;
+    private Vector2 desiredVectorDiff;
 
     void Awake()
     {
@@ -35,6 +36,8 @@ public class BeeManager : MonoBehaviour
         {
             myBees.Add(bee);
         }
+
+        desiredVectorDiff = transform.position - myPlayerTransform.position;
 
         lastDriftPosition = myPlayerTransform.position;
     }
@@ -60,7 +63,16 @@ public class BeeManager : MonoBehaviour
     void FixedUpdate()
     {
         //continuing
-        Vector2 speed = myPlayerRigidbody.linearVelocity;
+        Vector2 desiredPos = desiredVectorDiff + (Vector2) myPlayerTransform.position;
+        Vector2 toDesired = (desiredPos - (Vector2) transform.position);
+        float distance = toDesired.magnitude;
+        
+        Vector2 speed = toDesired.normalized * Mathf.Max(myPlayerRigidbody.linearVelocity.magnitude, myPlayer.speed);
+        if (speed.magnitude > distance)
+        {
+            speed = toDesired.normalized * distance;
+        }
+        
         mRigidbody.linearVelocity = speed;
 
         Vector2 dirToDrift = lastDriftPosition - (Vector2) myTransform.position;

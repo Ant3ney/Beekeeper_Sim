@@ -16,6 +16,7 @@ TagManager:
   - Hive
   - Enemy
   - Projectile
+  - Collider
   layers:
   - Default
   - TransparentFX
