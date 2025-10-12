@@ -23,12 +23,22 @@ public class PlayerController : MonoBehaviour
 
     private bool inHitstun = false;
     private float hitstunTimer = 0.0f;
-    private float hitStunTime = 1.0f;
+    private float hitStunTime = 0.5f;
+
+    public int startBeeNumber = 40;
+    public Transform beeParent;
 
     private Vector2 addedForce = Vector2.zero;
 
     public static PlayerController pcInstance;
     public RectTransform healthLeft;
+
+    private float fullWidth;
+    private SpriteRenderer myRenderer;
+    private Color redTint = new Color(0.752f, 0.12f, 0.23f);
+    public float flashRedTime = 0.25f;
+    public float flashRedTimer = 0.0f;
+    private bool isFlashingRed = false;
 	
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -40,14 +50,33 @@ public class PlayerController : MonoBehaviour
         beeCreation = FindFirstObjectByType<BeeCreation>();
         
         myCloudTransform = myCloud.transform;
+
+        for (int i = 0; i < startBeeNumber; i++)
+        {
+            GameObject bt = Instantiate(BeeTemplate);
+            bt.transform.position = myCloudTransform.position;
+            BeeObject beeComp = bt.GetComponent<BeeObject>();
+            if(beeParent) bt.transform.SetParent(beeParent);
+            myCloud.myBees.Add(beeComp);
+        }
+        
         lastDirection = new Vector2(1, 1);
         isInvincible = false;
+        
+        if(healthLeft) fullWidth = healthLeft.rect.width;
+        
+        myRenderer = GetComponent<SpriteRenderer>();
     }
 
     void Update()
     {
         if (healthLeft)
         {
+            float pct = myHealth / myMaxHealth;
+
+            Vector2 size = healthLeft.sizeDelta;
+            size.x = fullWidth * pct;
+            healthLeft.sizeDelta = size;
         }
     }
 
@@ -96,7 +125,7 @@ public class PlayerController : MonoBehaviour
             float damageTake = ec.enemyDamage;
 
             Vector2 movePos = (transform.position - 
-                               collision.transform.position).normalized * 1.5f;
+                               collision.transform.position).normalized * 3f;
             
             TakeDamage(damageTake, movePos);
         }
@@ -140,7 +169,34 @@ public class PlayerController : MonoBehaviour
     {
         StartCoroutine(InvincibleTime());
         StartCoroutine(HitstunTime(hitForce));
+        StartCoroutine(FlashRed());
         
         myHealth -= damage;
+    }
+    
+    public IEnumerator FlashRed()
+    {
+        flashRedTimer = 0.0f;
+        isFlashingRed = true;
+
+        float halfTime = flashRedTime / 2f;
+        while (flashRedTimer <= halfTime)
+        {
+            myRenderer.color = Color.Lerp(Color.white, redTint, flashRedTimer / halfTime);
+            flashRedTimer += Time.fixedDeltaTime;
+            yield return null;
+        }
+
+        while (flashRedTimer <= flashRedTime)
+        {
+            myRenderer.color = Color.Lerp(redTint, Color.white,
+                (flashRedTimer - halfTime) / halfTime);
+            flashRedTimer += Time.fixedDeltaTime;
+            yield return null;
+        }
+
+        myRenderer.color = Color.white;
+        flashRedTimer = 0.0f;
+        isFlashingRed = false;
     }
 }

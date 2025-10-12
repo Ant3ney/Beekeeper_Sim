@@ -44,6 +44,8 @@ public class HealthProto : MonoBehaviour
     public void ReciveDamage(float damage) {
 	    Debug.Log("Damage: " + damage);
 	health -= damage;
+	
+	
 	if(health > 0) stage = "recentDamage";
 	else { 
 		stage = "dead";

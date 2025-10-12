@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1522382180784513708}
   m_Layer: 0
   m_Name: Bee Cloud
-  m_TagString: Player
+  m_TagString: BeeCloud
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -102,10 +102,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26b9d4366396d5a40a737371c8fc7918, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 2
+  radius: 1.1
   myBees: []
-  distanceAway: 3.5
-  speedTowardDrift: 1.5
+  distanceAway: 2
+  speedTowardDrift: 0.5
 --- !u!61 &6283289838201216516
 BoxCollider2D:
   m_ObjectHideFlags: 0

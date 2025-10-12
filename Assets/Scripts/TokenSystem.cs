@@ -13,7 +13,7 @@ public class TokenSystem : MonoBehaviour
 
 	void Awake()
 	{
-		if(tsInstance != null) tsInstance = this;
+		if(tsInstance == null) tsInstance = this;
 	}
 
 	// Update is called once per frame

@@ -140,6 +140,8 @@ MonoBehaviour:
   maxHealth: 100
   isPlayer: 0
   healthLeft: {fileID: 0}
+  flashRedTime: 0.25
+  flashRedTimer: 0
 --- !u!1 &8283151703366814753
 GameObject:
   m_ObjectHideFlags: 0
@@ -157,7 +159,7 @@ GameObject:
   - component: {fileID: 8579997138295877480}
   m_Layer: 0
   m_Name: MeleEnemy_Easy_Mode
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -341,3 +343,5 @@ MonoBehaviour:
   maxHealth: 100
   isPlayer: 0
   healthLeft: {fileID: 0}
+  flashRedTime: 0.2
+  flashRedTimer: 0

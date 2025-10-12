@@ -290,25 +290,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 82123d50d836bc84f8b68bc37a1c0604, type: 3}
---- !u!1 &244196589 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1676358107572379756, guid: d06ed3b2226f1404fb7829ac67fc7273, type: 3}
-  m_PrefabInstance: {fileID: 7146166273878366294}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &244196593
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 244196589}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5112dbe9c51c30444b3b221cc63479e6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hiveRespawnCooldown: 25
-  addFromHive: 3
 --- !u!1001 &272247574
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -963,6 +944,9 @@ MonoBehaviour:
   attackObject: {fileID: 0}
   traceRadius: 1.5
   AttackObjectReach: 3
+  enemyDamage: 20
+  attackStartSoundEffect: {fileID: 0}
+  attackHitSoundEffect: {fileID: 0}
 --- !u!114 &612090550
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1540,18 +1524,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bee Cloud
       objectReference: {fileID: 0}
-    - target: {fileID: 7833555160472251021, guid: 6529eb838d01adf43a9960723e97830d, type: 3}
-      propertyPath: radius
-      value: 1.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7833555160472251021, guid: 6529eb838d01adf43a9960723e97830d, type: 3}
-      propertyPath: distanceAway
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7833555160472251021, guid: 6529eb838d01adf43a9960723e97830d, type: 3}
-      propertyPath: speedTowardDrift
-      value: 0.5
-      objectReference: {fileID: 0}
     - target: {fileID: 9051996020021932480, guid: 6529eb838d01adf43a9960723e97830d, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.1454304
@@ -1725,10 +1697,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1676358107572379756, guid: d06ed3b2226f1404fb7829ac67fc7273, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 244196593}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d06ed3b2226f1404fb7829ac67fc7273, type: 3}
 --- !u!1001 &7681951491900193807
 PrefabInstance:
@@ -1781,14 +1750,6 @@ PrefabInstance:
     - target: {fileID: 1261641451511190173, guid: 92cc75b88c41f9f4a841bf435900d7d1, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 6156390515666890866, guid: 92cc75b88c41f9f4a841bf435900d7d1, type: 3}
-      propertyPath: beeSpeed
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 6156390515666890866, guid: 92cc75b88c41f9f4a841bf435900d7d1, type: 3}
-      propertyPath: lengthPerBee
-      value: 0.3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:

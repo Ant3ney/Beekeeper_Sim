@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6156390515666890866}
   - component: {fileID: 1247300028588242817}
   - component: {fileID: 6212688272443942533}
+  - component: {fileID: 7441717879649102601}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -81,8 +82,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
-  m_Color: {r: 0.8199416, g: 0.5838733, b: 0.87169814, a: 1}
+  m_Sprite: {fileID: -9170867339906893819, guid: cee4053ffa8d21041be2c17a6d902697, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -109,6 +110,12 @@ MonoBehaviour:
   lastDirection: {x: 0, y: 0}
   myCloud: {fileID: 0}
   beeCreation: {fileID: 0}
+  myHealth: 100
+  myMaxHealth: 100
+  invincibleTime: 0.75
+  startBeeNumber: 55
+  beeParent: {fileID: 0}
+  healthLeft: {fileID: 0}
 --- !u!114 &6156390515666890866
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -147,10 +154,10 @@ MonoBehaviour:
   beeList: []
   maxNumberKnots: 15
   maxCurveLength: 5
-  lengthPerBee: 0.5
+  lengthPerBee: 0.25
   minimumDistance: 0.025
-  beeReturnTimer: 2.5
-  beeSpeed: 8
+  beeReturnTimer: 3
+  beeSpeed: 13
   shapeFalloffTime: 0.3
   shapeFalloffTimer: 0
   splineCreationCooldown: 0.75
@@ -216,18 +223,32 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0.21133333}
+  m_Offset: {x: 0, y: -0.028638244}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.28866667}
-    oldSize: {x: 1, y: 1}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.69, y: 1.84}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1, y: 1.7732413}
   m_EdgeRadius: 0
+--- !u!114 &7441717879649102601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1261641451511190173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0557a168deb07b42821844b5a6d4fef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  regularSprite: {fileID: -4287793996874356941, guid: 4058adaa722fbb242987025f7223da5e, type: 3}
+  attackSprite: {fileID: -3529406103374648242, guid: a3e0e3dab69678444b1fffb138821955, type: 3}
 --- !u!1001 &5236970646615456801
 PrefabInstance:
   m_ObjectHideFlags: 0

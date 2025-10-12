@@ -15,9 +15,7 @@ TagManager:
   - BeeCloud
   - Hive
   - Enemy
-  - MusicSystem
-  - Sequencer
-  - DialogSystem
+  - Projectile
   layers:
   - Default
   - TransparentFX
