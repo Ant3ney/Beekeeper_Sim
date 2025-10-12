@@ -24,16 +24,22 @@ public class BeeObject : MonoBehaviour
     private Vector2 headedVector;
     private bool hasDirection = false;
     private bool hasChosenSince = false;
+    private bool doHit = false;
 
     [Header("Game Feel Parameters")] 
     public float beeRoamSpeed = 2f;
     public float beeReturnSpeed = 8f;
     public float snapCloseness = 0.02f;
+
+    public float damagePerInterval = 50f;
+    public float damageInterval = 0.25f;
+    public float damageIntervalTimer = 0.0f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
     {
         //TODO:change/optimize later
         myCloud = FindFirstObjectByType<BeeManager>();
+        
         
         scInstance = BeeCreation.Instance;
         initialized = false;
@@ -44,11 +50,20 @@ public class BeeObject : MonoBehaviour
         myTransform = transform;
         myCloudTransform = myCloud.transform;
         
+        
+        
         SetMoveState(MoveState.FreeCloud);
+    }
+    
+    private void Update()
+    {
     }
 
     public void FixedUpdate()
     {
+        //fixed update is called before collision
+        doHit = false;
+        
         if (!scInstance) scInstance = BeeCreation.Instance;
             
         if (scInstance && !initialized)
@@ -58,6 +73,14 @@ public class BeeObject : MonoBehaviour
             initialized = true;
         }
         //MovingFunction();
+
+        damageIntervalTimer += Time.fixedDeltaTime;
+        if (damageIntervalTimer >= damageInterval)
+        {
+            damageIntervalTimer -= damageInterval;
+            doHit = true;
+        }
+        
     }
     
     
@@ -96,12 +119,17 @@ public class BeeObject : MonoBehaviour
         }
         else if (curMoveState == MoveState.FreeCloud)
         {
-            mRigidbody.linearVelocity = headedVector;
+            mRigidbody.linearVelocity = headedVector * beeRoamSpeed;
             Vector3 myPos = myTransform.position;
             Vector3 cloudPos = myCloudTransform.position;
             float radius = myCloud.radius;
             Vector2 meToCloud = cloudPos - myPos;
             float distance = meToCloud.magnitude;
+            
+            if (distance == 0)
+            {
+                meToCloud = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f));
+            }
 
             Vector2 curDir = mRigidbody.linearVelocity;
             float dotval = Vector2.Dot(curDir.normalized, meToCloud.normalized);   
@@ -127,6 +155,7 @@ public class BeeObject : MonoBehaviour
 
         }
     }
+
     
 
     private Vector2 GetCorrectDirectionForCloud()
@@ -135,6 +164,11 @@ public class BeeObject : MonoBehaviour
         Vector3 myPos = myTransform.position;
         
         Vector3 meToCloud = Vector3.Normalize(cloudPos - myPos);
+        if (meToCloud.magnitude == 0)
+        {
+            meToCloud = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f));
+        }
+        
         //90 degree randomization, means 0.5 dot product
         //first end
         float angle = Mathf.PI / 4;
@@ -158,12 +192,41 @@ public class BeeObject : MonoBehaviour
             SetMoveState(MoveState.FreeCloud);
         }
     }
-    
-    private void OnCollisionEnter2D(Collision2D other)
+
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("BeeCloud"))
         {   
             CollideWithPlayer();
+        }
+
+       
+    }
+
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        
+        GameObject enemyObj = other.gameObject;
+        if (enemyObj.CompareTag("Enemy"))
+        {
+            //if it is time to hit...
+            if(doHit) Debug.Log("Washit");
+        }
+        
+        if (curMoveState != MoveState.FreeCloud &&
+            curMoveState != MoveState.Returning)
+        {
+            if (doHit && enemyObj.CompareTag("Enemy"))
+            {
+                //i hate having to do get components on update but there's not much else we can do
+                TokenSystem.tsInstance.enemyHealths.TryGetValue(enemyObj, out HealthSystem enemyHealth);
+                if (!enemyHealth) enemyHealth = enemyObj.GetComponent<HealthSystem>();
+                if (enemyHealth)
+                {
+                    enemyHealth.reciveDamage(damagePerInterval);
+                }
+            }
+            
         }
     }
 

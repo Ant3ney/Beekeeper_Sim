@@ -31,6 +31,7 @@ public class EnemyCharacter : MonoBehaviour
 	Vector3 attackVelocityDir;
 
 	public float AttackObjectReach = 3f;
+	public float enemyDamage = 20f;
 
 	Vector3 playerPosUpdated;
 
@@ -39,10 +40,14 @@ public class EnemyCharacter : MonoBehaviour
 	    
 	void Awake() {
 		agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
-		// ✅ Stop the agent from rotating automatically
-		agent.updateRotation = false;
-		// Optional: if using 2D, stop movement on Y axis
-		agent.updateUpAxis = false;
+
+		if (agent)
+		{
+			// ✅ Stop the agent from rotating automatically
+			agent.updateRotation = false;
+			// Optional: if using 2D, stop movement on Y axis
+			agent.updateUpAxis = false;
+		}
 	}
 	void Start()
 	{
@@ -54,7 +59,7 @@ public class EnemyCharacter : MonoBehaviour
 
 		behaviorAgent = GetComponent<BehaviorGraphAgent>();
 
-		
+		Debug.Log("Was registered");
 		GetTokenSystem.RegisterEnemy(this);
 
 		positionThisFrame = this.transform.position;
@@ -65,6 +70,7 @@ public class EnemyCharacter : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
+		/*
 		BlackboardVariable<MainEnemyState> newStateBlackboardVariable;
 		behaviorAgent.BlackboardReference.GetVariable("Main Enemy State", out newStateBlackboardVariable);
 		state = (MainEnemyState)newStateBlackboardVariable.ObjectValue;
@@ -75,6 +81,7 @@ public class EnemyCharacter : MonoBehaviour
 
 		Debug.Log(newStateBlackboardVariable.ObjectValue);
 		playerPosUpdated = player.transform.position;
+		*/
 	}
 
 	float DistanceBetweenSelfAndPlayer() {

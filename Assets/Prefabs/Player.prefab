@@ -104,8 +104,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c58fb8aa43904f6f8a104d8ab519b052, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
+  speed: 4.5
+  BeeTemplate: {fileID: 4804612121226170927, guid: 82123d50d836bc84f8b68bc37a1c0604, type: 3}
   lastDirection: {x: 0, y: 0}
+  myCloud: {fileID: 0}
+  beeCreation: {fileID: 0}
 --- !u!114 &6156390515666890866
 MonoBehaviour:
   m_ObjectHideFlags: 0

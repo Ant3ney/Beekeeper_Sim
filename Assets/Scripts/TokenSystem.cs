@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Unity.Collections;
 using UnityEngine;
 
 public class TokenSystem : MonoBehaviour
@@ -6,10 +7,13 @@ public class TokenSystem : MonoBehaviour
 	public float ticketRewardDelay = 0.5f;
 	float timmer = 0;
 	// Start is called once before the first execution of Update after the MonoBehaviour is created
-	List<EnemyCharacter> enemyRegistry = new List<EnemyCharacter>();
-	void Start()
-	{
+	public List<EnemyCharacter> enemyRegistry = new List<EnemyCharacter>();
+	public static TokenSystem tsInstance;
+	public Dictionary<GameObject, HealthSystem> enemyHealths = new Dictionary<GameObject, HealthSystem>();
 
+	void Awake()
+	{
+		if(tsInstance != null) tsInstance = this;
 	}
 
 	// Update is called once per frame
@@ -55,9 +59,15 @@ public class TokenSystem : MonoBehaviour
 	public void RegisterEnemy(EnemyCharacter enemy) {
 		if (!enemyRegistry.Contains(enemy))
 			enemyRegistry.Add(enemy);
+
+		HealthSystem enemyHealth = enemy.GetComponent<HealthSystem>();
+		enemyHealths.Add(enemy.gameObject, enemyHealth);
 	}
-	public void UnregisterEnemy(EnemyCharacter enemy) {
+	public void UnregisterEnemy(EnemyCharacter enemy)
+	{
 		enemyRegistry.Remove(enemy);
+		enemyHealths.Remove(enemy.gameObject);
+		
 	}
 }
 
@@ -66,6 +76,7 @@ public static class GetTokenSystem {
 
 	public static void RegisterEnemy(EnemyCharacter enemy) {
 		TokenSystem tokenSystem = GameObject.Find("TokenSystem").GetComponent<TokenSystem>();
+		Debug.Log("enemy registered");
 		tokenSystem.RegisterEnemy(enemy);
 	}
 	public static void UnregisterEnemy(EnemyCharacter enemy) {
