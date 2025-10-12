@@ -9,12 +9,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 18843209973668907}
-  - component: {fileID: 2515080291244966646}
   - component: {fileID: 1902029825055162543}
   - component: {fileID: 8215215579206175247}
   - component: {fileID: 4608133252381939310}
   - component: {fileID: 5872268739847738332}
   - component: {fileID: 9178434069415672491}
+  - component: {fileID: 4430584356809903564}
   - component: {fileID: 2626869189966558230}
   m_Layer: 3
   m_Name: ProtoPlayer
@@ -40,19 +40,6 @@ Transform:
   - {fileID: 6264385340280403583}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2515080291244966646
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 784645901205574821}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 47058ac2cb16d9349bf378a9f407425d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 5
 --- !u!212 &1902029825055162543
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -207,6 +194,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   regularSprite: {fileID: -4287793996874356941, guid: 4058adaa722fbb242987025f7223da5e, type: 3}
   attackSprite: {fileID: -3529406103374648242, guid: a3e0e3dab69678444b1fffb138821955, type: 3}
+--- !u!114 &4430584356809903564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 784645901205574821}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c58fb8aa43904f6f8a104d8ab519b052, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5
+  BeeTemplate: {fileID: 0}
+  lastDirection: {x: 0, y: 0}
+  myCloud: {fileID: 0}
+  beeCreation: {fileID: 0}
 --- !u!114 &2626869189966558230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -222,6 +226,7 @@ MonoBehaviour:
   currentHealth: 100
   maxHealth: 100
   isPlayer: 1
+  healthLeft: {fileID: 0}
 --- !u!1 &1720598065036539759
 GameObject:
   m_ObjectHideFlags: 0

@@ -10,6 +10,12 @@ public class PlayerController : MonoBehaviour
     [HideInInspector] public BeeManager myCloud;
     private Transform myCloudTransform;
     [HideInInspector] public BeeCreation beeCreation;
+
+    public float myHealth = 100.0f;
+
+    private float invincibleTimer = 0.0f;
+    public float invincibleTime = 0.75f;
+    private bool isInvincible = false;
 	
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -20,6 +26,7 @@ public class PlayerController : MonoBehaviour
         
         myCloudTransform = myCloud.transform;
         lastDirection = new Vector2(1, 1);
+        isInvincible = false;
     }
 
     // Update is called once per frame
@@ -33,6 +40,16 @@ public class PlayerController : MonoBehaviour
 
         if(move.magnitude >= 0.05f) lastDirection = new Vector2(Mathf.Sign(move.x), Mathf.Sign(move.y));
         //transform.position += 5f * Time.deltaTime * move;
+
+        if (isInvincible)
+        {
+            invincibleTimer += Time.fixedDeltaTime;
+            if (invincibleTimer >= invincibleTime)
+            {
+                invincibleTimer = 0.0f;
+                isInvincible = false;
+            }
+        }
     }
 
     void OnTriggerStay2D(Collider2D other)
@@ -52,6 +69,19 @@ public class PlayerController : MonoBehaviour
             
             ho.StartInactivity();
             //bee add arsenal is in its fixed update...
+        }
+    }
+
+    void OnCollisionStay2D(Collision2D collision)
+    {
+        GameObject otherObject = collision.gameObject;
+
+        if (otherObject.CompareTag("Enemy") && !isInvincible)
+        {
+            EnemyCharacter ec = collision.gameObject.GetComponent<EnemyCharacter>();
+            float damageTake = ec.enemyDamage;
+            isInvincible = true;
+            myHealth -= damageTake;
         }
     }
 }

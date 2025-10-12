@@ -343,6 +343,7 @@ public class BeeCreation : MonoBehaviour
         for (int i = 0; i < splinePredictedBees; i++)
         {
             BeeObject bo = beeReserve.Dequeue();
+            bo.SetMoveState(BeeObject.MoveState.Free);
             beeSet.Remove(bo);
             listToReturn.Add(bo);
         }
