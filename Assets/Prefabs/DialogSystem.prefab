@@ -69,8 +69,8 @@ MonoBehaviour:
     lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem
     ipsum lorem ipsum lorem ipsum
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 051c0a819bd3d344f87056545ec61a82, type: 2}
+  m_sharedMaterial: {fileID: 3974426491601908664, guid: 051c0a819bd3d344f87056545ec61a82, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -717,8 +717,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Keeper
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 051c0a819bd3d344f87056545ec61a82, type: 2}
+  m_sharedMaterial: {fileID: 3974426491601908664, guid: 051c0a819bd3d344f87056545ec61a82, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -852,7 +852,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 9020688447017152451, guid: 256c8ea7959c03f478ac96b299f38805, type: 3}
+  m_Sprite: {fileID: -1323924794374611418, guid: c7d8d8f4016be2c40ac1d6ec502da0c2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1246,7 +1246,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 9020688447017152451, guid: 256c8ea7959c03f478ac96b299f38805, type: 3}
+  m_Sprite: {fileID: 7519852302635814909, guid: 0eb2639a1729d3d4094e196a6d56335f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
