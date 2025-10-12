@@ -132,7 +132,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 75.33148, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -317,7 +317,7 @@ MonoBehaviour:
       LeftSubjectSprite: {fileID: 0}
       RightSubjectSprite: {fileID: 0}
       CarryOverLastEntry: 0
-      Voice: {fileID: 8300000, guid: a4bd3bdc05643be4c8a4dae224e2a656, type: 3}
+      Voice: {fileID: 8300000, guid: 53d2496efeeefe146bc56528e37b91d0, type: 3}
       overideBackground: 1
       hideLeftSubject: 1
       hideRightSubject: 1
@@ -330,7 +330,7 @@ MonoBehaviour:
       LeftSubjectSprite: {fileID: 0}
       RightSubjectSprite: {fileID: 0}
       CarryOverLastEntry: 0
-      Voice: {fileID: 8300000, guid: a4bd3bdc05643be4c8a4dae224e2a656, type: 3}
+      Voice: {fileID: 8300000, guid: 246a1a465a3eed449bd5853ddcce9e5e, type: 3}
       overideBackground: 1
       hideLeftSubject: 1
       hideRightSubject: 1
@@ -343,7 +343,7 @@ MonoBehaviour:
       LeftSubjectSprite: {fileID: 0}
       RightSubjectSprite: {fileID: 0}
       CarryOverLastEntry: 0
-      Voice: {fileID: 8300000, guid: a4bd3bdc05643be4c8a4dae224e2a656, type: 3}
+      Voice: {fileID: 8300000, guid: 1a8d1f0b541114d46bf56011ccc224bb, type: 3}
       overideBackground: 1
       hideLeftSubject: 1
       hideRightSubject: 1
@@ -684,8 +684,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 5}
-  m_SizeDelta: {x: -40, y: -30}
+  m_AnchoredPosition: {x: 15.900007, y: 5}
+  m_SizeDelta: {x: -71.79999, y: -30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5828125081387839703
 CanvasRenderer:

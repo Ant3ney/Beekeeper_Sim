@@ -182,6 +182,7 @@ public class EnemyCharacter : MonoBehaviour
 
 	public void onDeath() {
 		GetTokenSystem.UnregisterEnemy(this);
+		GetKSequencer.EnemyDied();
 		Destroy(this.gameObject);
 	}
 
@@ -300,12 +301,12 @@ public class EnemyCharacter : MonoBehaviour
 		if (TryGetNavigablePointNear(playerPos, approachDistance, out targetPoint))
 		{
 			agent.SetDestination(targetPoint);
-			Debug.Log($"{name} moving near player at {targetPoint}");
+			//Debug.Log($"{name} moving near player at {targetPoint}");
 			return;
 		}
 
 		// ⚠️ Could not find a nearby navigable point, so fallback
-		Debug.LogWarning($"{name} could not find navigable point near player. Trying to move away...");
+		//Debug.LogWarning($"{name} could not find navigable point near player. Trying to move away...");
 
 		Vector3 awayDir = (transform.position - playerPos).normalized;
 		const int maxAttempts = 15;

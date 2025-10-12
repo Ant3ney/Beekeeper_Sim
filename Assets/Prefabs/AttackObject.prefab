@@ -50,6 +50,10 @@ MonoBehaviour:
   destroyTimer: 0.25
   attackerVelocity: {x: 5, y: 5, z: 0}
   attackObjectForce: 6
+  isRanged: 0
+  rangedSpeed: 3
+  audioClipImpactSoundEffect: {fileID: 0}
+  damage: 20
 --- !u!58 &4396571639379374173
 CircleCollider2D:
   m_ObjectHideFlags: 0

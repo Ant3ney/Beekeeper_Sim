@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using System;
 
 [System.Serializable]
@@ -22,7 +23,7 @@ public struct DialogEntry
 }
 
 [System.Serializable]
-public struct DialogSequence
+public class  DialogSequence
 {
 	public string Identifier;
 	public DialogEntry[] DialogEntries;
@@ -31,6 +32,8 @@ public struct DialogSequence
 public struct DialogSettings
 {
 	public Action  onDialogEnded;
+	public bool useKSequence;
+	public KSequence kSequence;
 }
 
 [System.Serializable]
@@ -144,7 +147,7 @@ public class DialogSystem : MonoBehaviour
 	}
 
 
-	public void RunDialog(string identifier, DialogSettings inDialogSettings = default) {
+	public void RunDialog(string identifier, DialogSettings inDialogSettings) {
 		objectsAndComponents = new ObjectsAndComponents(this.gameObject);
 		audioSource = GetComponent<AudioSource>();
 		dialogSettings = inDialogSettings;
@@ -155,6 +158,8 @@ public class DialogSystem : MonoBehaviour
 			DialogEntries = new DialogEntry[0],
 			Identifier = "Default"
 		};
+
+		Debug.Log("identifier: " + identifier);
 
 		for(int i = 0; i < dialogSequences.Length; i++) {
 			if(dialogSequences[i].Identifier ==  identifier) {
@@ -227,11 +232,27 @@ public class DialogSystem : MonoBehaviour
 		if (cI >= currentSequence.DialogEntries.Length) {
 			Time.timeScale = 1;
 			HideDialog();
-			dialogSettings.onDialogEnded();
+			if(dialogSettings.useKSequence)
+			{
+				postDialogKSequence(dialogSettings.kSequence);
+			} else {
+				dialogSettings.onDialogEnded();
+			}
 			return;
 		}
 		currentEntry = currentSequence.DialogEntries[cI];
 		RunEntry(currentEntry);
+	}
+
+	public void postDialogKSequence(KSequence sequenceToCheck) {
+		if (sequenceToCheck.playMusic && sequenceToCheck.playmusicAfterDialog) {
+			GetMusicSystem.PlayTemplate(sequenceToCheck.musicTemplateToPlay);
+		}
+
+		Debug.Log("Made it to post");
+		if(sequenceToCheck.changeLevel) {
+			SceneManager.LoadScene(sequenceToCheck.levelToChangeTo);
+		}
 	}
 
 	public void HideDialog() {

@@ -194,7 +194,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   approachDistance: 6
-  attackDistance: 4
+  attackDistance: 2
   tokenTickets: 1
   state: 1
   attackState: 0

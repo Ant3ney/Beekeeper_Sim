@@ -32,6 +32,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PlaceHolderEnemyAIGameplay.unity
     guid: 5a57d2f1a09fb08499c7b8f6a95e3d70
+  - enabled: 1
+    path: Assets/Scenes/AnthonyDevAreaToAvoidMergeConflits/DevGameplay.unity
+    guid: c94403755867fd242981d4add00866ae
   m_configObjects:
     com.unity.dt.app-ui: {fileID: 11400000, guid: 99f9c9493070a9d4c979a8fec7c5a8d3, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
