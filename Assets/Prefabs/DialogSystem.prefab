@@ -317,7 +317,7 @@ MonoBehaviour:
       LeftSubjectSprite: {fileID: 0}
       RightSubjectSprite: {fileID: 0}
       CarryOverLastEntry: 0
-      Voice: {fileID: 8300000, guid: a4bd3bdc05643be4c8a4dae224e2a656, type: 3}
+      Voice: {fileID: 8300000, guid: 53d2496efeeefe146bc56528e37b91d0, type: 3}
       overideBackground: 1
       hideLeftSubject: 1
       hideRightSubject: 1
@@ -330,7 +330,7 @@ MonoBehaviour:
       LeftSubjectSprite: {fileID: 0}
       RightSubjectSprite: {fileID: 0}
       CarryOverLastEntry: 0
-      Voice: {fileID: 8300000, guid: a4bd3bdc05643be4c8a4dae224e2a656, type: 3}
+      Voice: {fileID: 8300000, guid: 246a1a465a3eed449bd5853ddcce9e5e, type: 3}
       overideBackground: 1
       hideLeftSubject: 1
       hideRightSubject: 1
@@ -343,7 +343,7 @@ MonoBehaviour:
       LeftSubjectSprite: {fileID: 0}
       RightSubjectSprite: {fileID: 0}
       CarryOverLastEntry: 0
-      Voice: {fileID: 8300000, guid: a4bd3bdc05643be4c8a4dae224e2a656, type: 3}
+      Voice: {fileID: 8300000, guid: 1a8d1f0b541114d46bf56011ccc224bb, type: 3}
       overideBackground: 1
       hideLeftSubject: 1
       hideRightSubject: 1
