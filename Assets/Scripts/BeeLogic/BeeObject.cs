@@ -31,7 +31,7 @@ public class BeeObject : MonoBehaviour
     public float beeReturnSpeed = 8f;
     public float snapCloseness = 0.02f;
 
-    public float damagePerInterval = 50f;
+    public float damagePerInterval = 5f;
     public float damageInterval = 0.25f;
     public float damageIntervalTimer = 0.0f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -55,9 +55,6 @@ public class BeeObject : MonoBehaviour
         SetMoveState(MoveState.FreeCloud);
     }
     
-    private void Update()
-    {
-    }
 
     public void FixedUpdate()
     {
@@ -200,6 +197,7 @@ public class BeeObject : MonoBehaviour
             CollideWithPlayer();
         }
 
+
        
     }
 
@@ -241,6 +239,11 @@ public class BeeObject : MonoBehaviour
         }
     }
 
+    public MoveState GetMoveState()
+    {
+        return curMoveState;
+    }
+
     public void MoveBeePosition(Vector3 newPosition)
     {
         //might have to change this to rigidbody/physics movement
@@ -254,12 +257,6 @@ public class BeeObject : MonoBehaviour
         {
             mRigidbody.MovePosition(newPosition);
         }
-    }
-    
-    
-    void LerpToPlayer()
-    {
-        
     }
     
     //collision stuff...

@@ -47,9 +47,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2bd0f5ba4386de4997c8569580559f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destroyTimer: 0.25
+  destroyTimer: 25
   attackerVelocity: {x: 5, y: 5, z: 0}
   attackObjectForce: 6
+  isRanged: 0
+  rangedSpeed: 3
+  audioClipImpactSoundEffect: {fileID: 0}
+  damage: 20
 --- !u!58 &4396571639379374173
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -131,7 +135,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 0}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
