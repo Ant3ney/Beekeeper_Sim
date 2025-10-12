@@ -183,6 +183,8 @@ MonoBehaviour:
   attackObject: {fileID: 6792521220820760721, guid: 93543a0c2788ae8478716cb2511bee13, type: 3}
   traceRadius: 1.5
   AttackObjectReach: 1.5
+  attackStartSoundEffect: {fileID: 8300000, guid: fc213f9a9ecd02147a1b74006c1a8d69, type: 3}
+  attackHitSoundEffect: {fileID: 8300000, guid: 0724536e7de37e547884f834d8a3eea0, type: 3}
 --- !u!58 &1925219220599415294
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -320,3 +322,4 @@ MonoBehaviour:
   currentHealth: 100
   maxHealth: 100
   isPlayer: 0
+  healthLeft: {fileID: 0}

@@ -14,6 +14,7 @@ public class EnemyAnimEventHooks : MonoBehaviour
         
     }
 
+
     public void SpawnAttackObject() {
 		Transform parentTransform = transform.parent;
 		 GameObject parentObject = parentTransform.gameObject;

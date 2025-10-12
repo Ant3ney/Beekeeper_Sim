@@ -33,6 +33,10 @@ public class EnemyCharacter : MonoBehaviour
 	public float AttackObjectReach = 3f;
 
 	Vector3 playerPosUpdated;
+
+	public AudioClip attackStartSoundEffect;
+	public AudioClip attackHitSoundEffect;
+	    
 	void Awake() {
 		agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
 		// ✅ Stop the agent from rotating automatically
@@ -113,8 +117,15 @@ public class EnemyCharacter : MonoBehaviour
 		// 2. Spawn the prefab
 		GameObject spawnedAttackObject = Instantiate(attackObject, spawnPos, transform.rotation);
 		AttackObject ao = spawnedAttackObject.GetComponent<AttackObject>();
+		ao.audioClipImpactSoundEffect = attackHitSoundEffect;
 		ao.attackerVelocity = fromPlayerToEnemy;
+
+		if (attackStartSoundEffect != null) {
+			AudioSource.PlayClipAtPoint(attackStartSoundEffect, this.transform.position);
+		}
+		
 	}
+
 
 	public void FinishedEngagement() {
 
