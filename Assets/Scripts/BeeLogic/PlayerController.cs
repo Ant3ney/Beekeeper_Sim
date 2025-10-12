@@ -66,6 +66,8 @@ public class PlayerController : MonoBehaviour
         if(healthLeft) fullWidth = healthLeft.rect.width;
         
         myRenderer = GetComponent<SpriteRenderer>();
+
+	Application.targetFrameRate = 60; // Sets a target frame rate of 60 FPS
     }
 
     void Update()

@@ -200,7 +200,7 @@ public class BeeCreation : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         Vector2 mousePosition = Input.mousePosition;
         curMousePos = ScreenToWorldPosition(mousePosition);
@@ -222,7 +222,7 @@ public class BeeCreation : MonoBehaviour
 
     private void HandleSplineCreation()
     {
-        splineCreationTimer += Time.fixedDeltaTime;
+        splineCreationTimer += Time.deltaTime;
         
         if (Input.GetMouseButtonDown(0) && beeReserve.Count > 0)
         {
