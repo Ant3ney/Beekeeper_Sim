@@ -76,6 +76,7 @@ public static class GetTokenSystem {
 
 	public static void RegisterEnemy(EnemyCharacter enemy) {
 		TokenSystem tokenSystem = GameObject.Find("TokenSystem").GetComponent<TokenSystem>();
+		Debug.Log("enemy registered");
 		tokenSystem.RegisterEnemy(enemy);
 	}
 	public static void UnregisterEnemy(EnemyCharacter enemy) {

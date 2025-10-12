@@ -31,7 +31,7 @@ public class BeeObject : MonoBehaviour
     public float beeReturnSpeed = 8f;
     public float snapCloseness = 0.02f;
 
-    public float damagePerInterval = 1f;
+    public float damagePerInterval = 50f;
     public float damageInterval = 0.25f;
     public float damageIntervalTimer = 0.0f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -53,6 +53,11 @@ public class BeeObject : MonoBehaviour
         
         
         SetMoveState(MoveState.FreeCloud);
+    }
+    
+    private void()
+    {
+        if()
     }
 
     public void FixedUpdate()
@@ -205,7 +210,8 @@ public class BeeObject : MonoBehaviour
         GameObject enemyObj = other.gameObject;
         if (enemyObj.CompareTag("Enemy"))
         {
-            Debug.Log("Is Colliding with Enemy");
+            //if it is time to hit...
+            if(doHit) Debug.Log("Washit");
         }
         
         if (curMoveState != MoveState.FreeCloud &&
