@@ -77,7 +77,8 @@ public class BeeShape
     {
         currentTimer += Time.fixedDeltaTime;
         float len = spline.GetLength();
-        
+
+        bool stillHasOnFormation = false;
         //linear movement function for each bee
         for (int i = 0; i < assignedBees.Count; i++)
         {
@@ -111,8 +112,14 @@ public class BeeShape
                     assignedBees[i].MoveBeePosition(desiredEndpoint);
                 }
             }
-            
+
+            if (assignedBees[i].GetMoveState() == BeeObject.MoveState.Free)
+            {
+                stillHasOnFormation = true;
+            }
         }
+
+        if (!stillHasOnFormation) shouldDestroySelf = true;
 
         if (shouldDestroySelf)
         {
