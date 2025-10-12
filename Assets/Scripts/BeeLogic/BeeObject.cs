@@ -55,9 +55,8 @@ public class BeeObject : MonoBehaviour
         SetMoveState(MoveState.FreeCloud);
     }
     
-    private void()
+    private void Update()
     {
-        if()
     }
 
     public void FixedUpdate()
