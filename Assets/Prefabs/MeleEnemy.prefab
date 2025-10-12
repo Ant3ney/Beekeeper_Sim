@@ -339,8 +339,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56118861f7dd1ce47ba09b05fe7d70a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentHealth: 100
-  maxHealth: 100
+  currentHealth: 5
+  maxHealth: 5
   isPlayer: 0
   healthLeft: {fileID: 0}
   flashRedTime: 0.2

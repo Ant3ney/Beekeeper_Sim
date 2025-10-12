@@ -2,7 +2,8 @@ using UnityEngine;
 
 public static class GetDialogSystem
 {
-	public static void RunDialog(string identifier, DialogSettings dialogSettings = default) { 
+	public static void RunDialog(string identifier, DialogSettings dialogSettings) { 
+		Debug.Log("Dialog Getter: " + identifier);
 		GameObject dialogSystemObj = FindDialogObject();
 		dialogSystemObj.SetActive(true);
 		DialogSystem dialogSystem = GameObject.Find("DialogSystem").GetComponent<DialogSystem>();

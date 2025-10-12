@@ -85,6 +85,10 @@ public class AttackObject : MonoBehaviour
 			Vector2 moveForce = rb.linearVelocity.normalized * 1.5f;
 			pc.TakeDamage(damage, moveForce);
 			Destroy(gameObject);
+
+			// Temorary health system. Delete me later
+			//oObj.GetComponent<HealthSystem).receaveDamage(damage);
+			//rb
 		}
 		
 		
