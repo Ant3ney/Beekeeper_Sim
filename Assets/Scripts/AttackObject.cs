@@ -11,6 +11,8 @@ public class AttackObject : MonoBehaviour
 	public float rangedSpeed = 3f;
 
 	public float dammage = 30;
+
+	public AudioClip audioClipImpactSoundEffect;
 	// Start is called once before the first execution of Update after the MonoBehaviour is created
 	void Start()
 	{
@@ -57,6 +59,8 @@ public class AttackObject : MonoBehaviour
 				Destroy(gameObject);
 			}
 			Debug.Log("Applied force to " + otherObj.name);
+
+			AudioSource.PlayClipAtPoint(audioClipImpactSoundEffect, this.transform.position);
 		}
 	}
 
