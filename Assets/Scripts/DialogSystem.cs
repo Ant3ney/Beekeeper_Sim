@@ -246,6 +246,7 @@ public class DialogSystem : MonoBehaviour
 
 	public void postDialogKSequence(KSequence sequenceToCheck) {
 		if (sequenceToCheck.playMusic && sequenceToCheck.playmusicAfterDialog) {
+			Debug.Log("Wanting to play: " + sequenceToCheck.musicTemplateToPlay);
 			GetMusicSystem.PlayTemplate(sequenceToCheck.musicTemplateToPlay);
 		}
 
