@@ -500,7 +500,7 @@ MonoBehaviour:
       dialogText: '*We* have a divine right to this land. Out of our way or feel
         the sting of the gods.'
       LeftSubjectSprite: {fileID: -2274593751980099078, guid: a2137e69549c6e544a441ab78ead7c7f, type: 3}
-      RightSubjectSprite: {fileID: 3878472819646491891, guid: 309c69b31345f9c46a0532c48154d7d2, type: 3}
+      RightSubjectSprite: {fileID: 8306913920280061723, guid: 6be32dc43572f7e4699b6ff856d8e02b, type: 3}
       CarryOverLastEntry: 0
       Voice: {fileID: 8300000, guid: 5e374bd001a4a554aae7919071d1b4ad, type: 3}
       overideBackground: 0
@@ -512,7 +512,7 @@ MonoBehaviour:
     - ActiveSpeakerName: 
       dialogText: DEFEAT 20 ENEMIES TO PROCEED
       LeftSubjectSprite: {fileID: -2274593751980099078, guid: a2137e69549c6e544a441ab78ead7c7f, type: 3}
-      RightSubjectSprite: {fileID: 3878472819646491891, guid: 309c69b31345f9c46a0532c48154d7d2, type: 3}
+      RightSubjectSprite: {fileID: 8306913920280061723, guid: 6be32dc43572f7e4699b6ff856d8e02b, type: 3}
       CarryOverLastEntry: 0
       Voice: {fileID: 0}
       overideBackground: 0
