@@ -53,8 +53,7 @@ public class PlayerAnimationSystem : MonoBehaviour
 	    //Debug.Log("Yes parent");
 	}
 
-		    if(parentRigidbody.gameObject.name == "Player") return;
-	Debug.Log("Update: " + parentRigidbody.gameObject.name);
+//	Debug.Log("Update: " + parentRigidbody.gameObject.name);
 
 
         // ✅ Determine if player is moving
