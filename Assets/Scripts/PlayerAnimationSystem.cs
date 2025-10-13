@@ -43,12 +43,32 @@ public class PlayerAnimationSystem : MonoBehaviour
 
     void Update()
     {
-        if (parentRigidbody == null)
+
+
+        if (parentRigidbody == null) {
             return;
+	    Debug.Log("No parent");
+	} else {
+
+	    //Debug.Log("Yes parent");
+	}
+
+		    if(parentRigidbody.gameObject.name == "Player") return;
+	Debug.Log("Update: " + parentRigidbody.gameObject.name);
+
 
         // ✅ Determine if player is moving
         Vector2 velocity = parentRigidbody.linearVelocity;
+
         IsMoving = velocity.sqrMagnitude > (movementThreshold * movementThreshold);
+	Debug.Log("velocity.sqrMagnitude" + velocity.sqrMagnitude);
+
+	if(IsMoving) {
+		Debug.Log("Moving: " + parentRigidbody.gameObject.name);
+	} else {
+
+		Debug.Log("not Moving: " + parentRigidbody.gameObject.name);
+	}
 
         // ✅ Update Animator parameter
         animator.SetBool("IsMoving", IsMoving);
@@ -61,5 +81,26 @@ public class PlayerAnimationSystem : MonoBehaviour
         {
             spriteRenderer.flipX = MoveDirectionX >= 0; // Faces left if moving left
         }
+    }
+
+    public bool IsEnemy()
+    {
+	    if (transform.parent != null)
+	    {
+		    GameObject parentObj = transform.parent.gameObject;
+
+		    if (parentObj.CompareTag("Enemy"))
+		    {
+			    return true;
+		    }
+		    else
+		    {
+			    return false;
+		    }
+	    }
+	    else
+	    {
+		    return false;
+	    }
     }
 }

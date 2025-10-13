@@ -34,7 +34,6 @@ public class BeeObject : MonoBehaviour
     public float damagePerInterval = 5f;
     public float damageInterval = 0.25f;
     public float damageIntervalTimer = 0.0f;
-    public AudioClip beeDamageSoundEffect;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
     {
@@ -221,9 +220,6 @@ public class BeeObject : MonoBehaviour
                 if (enemyHealth)
                 {
                     enemyHealth.reciveDamage(damagePerInterval);
-		    if (beeDamageSoundEffect != null) {
-			AudioSource.PlayClipAtPoint(beeDamageSoundEffect, this.transform.position);
-		    }
                 }
             }
             
