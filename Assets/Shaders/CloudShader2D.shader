@@ -192,8 +192,14 @@ Shader "Custom/CloudShader2D"
                 UNITY_VERTEX_OUTPUT_STEREO
             };
 
+            float _TestVal;
+            float _TimeSnap;
+            float _TimeSpeed;
             TEXTURE2D(_MainTex);
             SAMPLER(sampler_MainTex);
+
+             TEXTURE2D(_NoiseTex);
+            SAMPLER(sampler_NoiseTex);
             UNITY_TEXTURE_STREAMING_DEBUG_VARS_FOR_TEX(_MainTex);
 
             // NOTE: Do not ifdef the properties here as SRP batcher can not handle different layouts.
@@ -201,6 +207,11 @@ Shader "Custom/CloudShader2D"
                 half4 _Color;
             CBUFFER_END
 
+            
+            float snap(float time, float snapTime)
+            {
+                return round(time/snapTime) * snapTime;
+            }
             
 
             Varyings UnlitVertex(Attributes attributes)
@@ -226,15 +237,24 @@ Shader "Custom/CloudShader2D"
             float4 UnlitFragment(Varyings i) : SV_Target
             {
                 float2 distanceFromCenter = i.positionWS - i.centerWS;
+                float actualDistance = length(distanceFromCenter);
                 distanceFromCenter = normalize(distanceFromCenter);
+                actualDistance /= 5;
 
-                float2 upVector = float2(0, 1);
+                float2 upVector = float2(1, 0);
 
                 float angleBetween = atan2(upVector.y, upVector.x) -
                     atan2(distanceFromCenter.y, distanceFromCenter.x);
                 angleBetween += PI;
+                angleBetween /= 2 * PI;
+
+
+                float snappedTime = snap(_Time.y * _TimeSpeed, _TimeSnap);
+
+                float noiseTex = SAMPLE_TEXTURE2D(_NoiseTex, sampler_NoiseTex, float2(fmod(angleBetween, 1), fmod(snappedTime, 1))).r;
+                //noiseTex = 0.5f;
                 
-                float4 mainTex = i.color * SAMPLE_TEXTURE2D(_MainTex, sampler_MainTex, i.uv);
+                float4 mainTex = i.color * SAMPLE_TEXTURE2D(_MainTex, sampler_MainTex, i.uv + distanceFromCenter * noiseTex * _TestVal);
 
                 #if defined(DEBUG_DISPLAY)
                 SurfaceData2D surfaceData;
@@ -250,8 +270,8 @@ Shader "Custom/CloudShader2D"
                     return debugColor;
                 }
                 #endif
-
-                return float4(0, 0, 0, 1);
+                
+                return float4(i.color.rgb, mainTex.a);
             }
             ENDHLSL
         }
