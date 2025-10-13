@@ -236,7 +236,14 @@ public class DialogSystem : MonoBehaviour
 			{
 				postDialogKSequence(dialogSettings.kSequence);
 			} else {
-				dialogSettings.onDialogEnded();
+				if (dialogSettings.onDialogEnded != null)
+				{
+					dialogSettings.onDialogEnded();
+				}
+				else
+				{
+					Debug.LogWarning("onDialogEnded was not set!");
+				}
 			}
 			return;
 		}
