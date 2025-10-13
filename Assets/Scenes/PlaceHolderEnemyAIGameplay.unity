@@ -24076,8 +24076,16 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6257453847698243787, guid: cb686be914338b740b645686b5c25ffa, type: 3}
+      propertyPath: sequences.Array.data[1].numEnemiesDead
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 6257453847698243787, guid: cb686be914338b740b645686b5c25ffa, type: 3}
+      propertyPath: sequences.Array.data[2].numEnemiesDead
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 6257453847698243787, guid: cb686be914338b740b645686b5c25ffa, type: 3}
       propertyPath: sequences.Array.data[3].numEnemiesDead
-      value: 40
+      value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 6257453847698243787, guid: cb686be914338b740b645686b5c25ffa, type: 3}
       propertyPath: sequences.Array.data[2].levelToChangeTo
