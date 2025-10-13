@@ -1,0 +1,77 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4860677075214111214
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7413011838155467722}
+  - component: {fileID: 6257453847698243787}
+  m_Layer: 0
+  m_Name: Sequencer
+  m_TagString: Sequencer
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7413011838155467722
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4860677075214111214}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 11.162555, y: -1.4590195, z: -8.024516}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6257453847698243787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4860677075214111214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0830be71886697d438fd9a60884832c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sequences:
+  - numEnemiesDead: 5
+    playDialog: 1
+    dialogSequenceToPlay: Intro Animatic
+    playMusic: 1
+    playmusicAfterDialog: 1
+    musicTemplateToPlay: 2
+    changeLevel: 0
+    levelToChangeTo: 
+  - numEnemiesDead: 20
+    playDialog: 1
+    dialogSequenceToPlay: Level 3 Intro
+    playMusic: 1
+    playmusicAfterDialog: 1
+    musicTemplateToPlay: 3
+    changeLevel: 0
+    levelToChangeTo: 
+  - numEnemiesDead: 30
+    playDialog: 1
+    dialogSequenceToPlay: Level 4 Intro
+    playMusic: 0
+    playmusicAfterDialog: 0
+    musicTemplateToPlay: 3
+    changeLevel: 1
+    levelToChangeTo: Win
+  dialogSystems:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
