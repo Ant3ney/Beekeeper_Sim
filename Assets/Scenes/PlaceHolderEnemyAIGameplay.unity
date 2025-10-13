@@ -24055,6 +24055,10 @@ PrefabInstance:
       propertyPath: 'dialogSystems.Array.data[4]'
       value: 
       objectReference: {fileID: 1397167906}
+    - target: {fileID: 6257453847698243787, guid: cb686be914338b740b645686b5c25ffa, type: 3}
+      propertyPath: sequences.Array.data[0].dialogSequenceToPlay
+      value: Level 2 Intro
+      objectReference: {fileID: 0}
     - target: {fileID: 7413011838155467722, guid: cb686be914338b740b645686b5c25ffa, type: 3}
       propertyPath: m_LocalPosition.x
       value: 11.162555

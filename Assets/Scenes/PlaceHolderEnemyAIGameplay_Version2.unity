@@ -23265,7 +23265,7 @@ MonoBehaviour:
   sequences:
   - numEnemiesDead: 1
     playDialog: 1
-    dialogSequenceToPlay: Intro Animatic
+    dialogSequenceToPlay: Level 2 Intro
     playMusic: 1
     playmusicAfterDialog: 1
     musicTemplateToPlay: 2
