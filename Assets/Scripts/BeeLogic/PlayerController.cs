@@ -184,6 +184,7 @@ public class PlayerController : MonoBehaviour
         StartCoroutine(InvincibleTime());
         StartCoroutine(HitstunTime(hitForce));
         StartCoroutine(FlashRed());
+        StartCoroutine(CameraShake.Instance.StartShake());
         
         myHealth -= damage;
     }
