@@ -175,7 +175,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc827625b37d259439c018581c544be0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  beeRoamSpeed: 2.5
+  beeRoamSpeed: 8
   beeReturnSpeed: 12
   snapCloseness: 0.02
   damagePerInterval: 10

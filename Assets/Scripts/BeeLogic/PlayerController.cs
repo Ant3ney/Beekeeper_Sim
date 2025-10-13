@@ -1,4 +1,5 @@
 using System.Collections;
+using UnityEngine.SceneManagement;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -80,6 +81,15 @@ public class PlayerController : MonoBehaviour
             size.x = fullWidth * pct;
             healthLeft.sizeDelta = size;
         }
+
+	if (myHealth <= 0) {
+		playerDied();
+
+	}
+    }
+
+    void playerDied() {
+		SceneManager.LoadScene("GameOver");
     }
 
     // Update is called once per frame

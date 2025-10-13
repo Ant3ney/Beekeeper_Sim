@@ -131,7 +131,7 @@ GameObject:
   - component: {fileID: 85508143}
   m_Layer: 0
   m_Name: MusicSystem
-  m_TagString: Untagged
+  m_TagString: MusicSystem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -153,11 +153,11 @@ MonoBehaviour:
   audioSource3: {fileID: 0}
   audioSource4: {fileID: 0}
   audioSource5: {fileID: 0}
-  gmLayer1: {fileID: 0}
-  gmLayer2: {fileID: 0}
-  gmLayer3: {fileID: 0}
-  gmLayer4: {fileID: 0}
-  gmLayer5: {fileID: 0}
+  gmLayer1: {fileID: 8300000, guid: 33da9e3fe3a06014590cba24761fff7a, type: 3}
+  gmLayer2: {fileID: 8300000, guid: 42d509c38318c7249a0e567722dc487d, type: 3}
+  gmLayer3: {fileID: 8300000, guid: 0cbbc381d178e5a4eaec4ce6248d9c12, type: 3}
+  gmLayer4: {fileID: 8300000, guid: 52f3dd49526ec3f40ab56c62a6c74265, type: 3}
+  gmLayer5: {fileID: 8300000, guid: 6774f4a1823f99f4d9928ae4ec268702, type: 3}
   template: Layer1
 --- !u!4 &85508144
 Transform:
@@ -13749,6 +13749,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6156390515666890866, guid: 92cc75b88c41f9f4a841bf435900d7d1, type: 3}
+      propertyPath: minimumDistance
+      value: 0.000025
+      objectReference: {fileID: 0}
     - target: {fileID: 6170927314530927969, guid: 92cc75b88c41f9f4a841bf435900d7d1, type: 3}
       propertyPath: beeParent
       value: 
@@ -13980,7 +13984,7 @@ MonoBehaviour:
   enemyMaxSpawnTime: 150
   enemyDelayTillSpawn: 2
   enemySprite: {fileID: -2566791840715176196, guid: a45c9984d293aa649bbeff371554820c, type: 3}
-  musicClip: {fileID: 8300000, guid: 36f0dfbab44aae44a85f62d1e9d7557c, type: 3}
+  musicClip: {fileID: 0}
   loop: 1
   MusicVolume: 0.5
   beeSound: {fileID: 8300000, guid: e1320546e500eb54e8c2f45da681915b, type: 3}
@@ -23259,15 +23263,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sequences:
-  - numEnemiesDead: 5
+  - numEnemiesDead: 1
     playDialog: 1
     dialogSequenceToPlay: Intro Animatic
-    playMusic: 0
-    playmusicAfterDialog: 0
+    playMusic: 1
+    playmusicAfterDialog: 1
     musicTemplateToPlay: 2
     changeLevel: 0
     levelToChangeTo: 
-  - numEnemiesDead: 20
+  - numEnemiesDead: 3
     playDialog: 1
     dialogSequenceToPlay: Level 3 Intro
     playMusic: 1
@@ -23275,7 +23279,15 @@ MonoBehaviour:
     musicTemplateToPlay: 3
     changeLevel: 0
     levelToChangeTo: 
-  - numEnemiesDead: 30
+  - numEnemiesDead: 5
+    playDialog: 1
+    dialogSequenceToPlay: Level 4 Intro
+    playMusic: 0
+    playmusicAfterDialog: 0
+    musicTemplateToPlay: 3
+    changeLevel: 1
+    levelToChangeTo: Win
+  - numEnemiesDead: 5
     playDialog: 1
     dialogSequenceToPlay: Level 4 Intro
     playMusic: 0

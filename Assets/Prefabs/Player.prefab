@@ -158,11 +158,11 @@ MonoBehaviour:
   maxCurveLength: 5
   lengthPerBee: 0.25
   minimumDistance: 0.025
-  beeReturnTimer: 3
-  beeSpeed: 13
+  beeReturnTimer: 0.2
+  beeSpeed: 30
   shapeFalloffTime: 0.3
   shapeFalloffTimer: 0
-  splineCreationCooldown: 0.75
+  splineCreationCooldown: 0.1
   betweenAddsTime: 0.025
 --- !u!50 &1247300028588242817
 Rigidbody2D:

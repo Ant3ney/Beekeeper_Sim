@@ -17,6 +17,9 @@ TagManager:
   - Enemy
   - Projectile
   - Collider
+  - Sequencer
+  - DialogSystem
+  - MusicSystem
   layers:
   - Default
   - TransparentFX
