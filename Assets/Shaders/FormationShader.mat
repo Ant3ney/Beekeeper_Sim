@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: CloudShader
+  m_Name: FormationShader
   m_Shader: {fileID: 4800000, guid: 4634af3b6fa80134f998d2dd9d4cb5d9, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -28,7 +28,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: efd8acbe1494391448c3753af581e39e, type: 3}
+        m_Texture: {fileID: 2800000, guid: 2b60cfbf85f682d409e3196009aa26d7, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MaskTex:

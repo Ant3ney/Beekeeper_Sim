@@ -401,6 +401,18 @@ MonoBehaviour:
       hideSpeakerPanelAndText: 0
       hideDialogPanel: 0
       backgroundOveride: {fileID: 0}
+    - ActiveSpeakerName: 
+      dialogText: DEFEAT 5 ENEMIES TO PROCEED
+      LeftSubjectSprite: {fileID: -2274593751980099078, guid: a2137e69549c6e544a441ab78ead7c7f, type: 3}
+      RightSubjectSprite: {fileID: 5637047348223716582, guid: 69df0b0d66b6c264b88e1f3d7d1b02e5, type: 3}
+      CarryOverLastEntry: 0
+      Voice: {fileID: 0}
+      overideBackground: 0
+      hideLeftSubject: 1
+      hideRightSubject: 1
+      hideSpeakerPanelAndText: 1
+      hideDialogPanel: 0
+      backgroundOveride: {fileID: 0}
   - Identifier: Level 2 Intro
     DialogEntries:
     - ActiveSpeakerName: The Queen
@@ -429,6 +441,18 @@ MonoBehaviour:
       hideSpeakerPanelAndText: 0
       hideDialogPanel: 0
       backgroundOveride: {fileID: 0}
+    - ActiveSpeakerName: 
+      dialogText: DEFEAT 10 ENEMIES TO PROCEED
+      LeftSubjectSprite: {fileID: -2274593751980099078, guid: a2137e69549c6e544a441ab78ead7c7f, type: 3}
+      RightSubjectSprite: {fileID: 5637047348223716582, guid: 69df0b0d66b6c264b88e1f3d7d1b02e5, type: 3}
+      CarryOverLastEntry: 0
+      Voice: {fileID: 0}
+      overideBackground: 0
+      hideLeftSubject: 1
+      hideRightSubject: 1
+      hideSpeakerPanelAndText: 1
+      hideDialogPanel: 0
+      backgroundOveride: {fileID: 0}
   - Identifier: Level 3 Intro
     DialogEntries:
     - ActiveSpeakerName: The Queen
@@ -443,6 +467,18 @@ MonoBehaviour:
       hideLeftSubject: 0
       hideRightSubject: 0
       hideSpeakerPanelAndText: 0
+      hideDialogPanel: 0
+      backgroundOveride: {fileID: 0}
+    - ActiveSpeakerName: 
+      dialogText: DEFEAT 10 ENEMIES TO PROCEED
+      LeftSubjectSprite: {fileID: -2274593751980099078, guid: a2137e69549c6e544a441ab78ead7c7f, type: 3}
+      RightSubjectSprite: {fileID: 5637047348223716582, guid: 69df0b0d66b6c264b88e1f3d7d1b02e5, type: 3}
+      CarryOverLastEntry: 0
+      Voice: {fileID: 0}
+      overideBackground: 0
+      hideLeftSubject: 1
+      hideRightSubject: 1
+      hideSpeakerPanelAndText: 1
       hideDialogPanel: 0
       backgroundOveride: {fileID: 0}
   - Identifier: Level 4 Intro
@@ -471,6 +507,18 @@ MonoBehaviour:
       hideLeftSubject: 0
       hideRightSubject: 0
       hideSpeakerPanelAndText: 0
+      hideDialogPanel: 0
+      backgroundOveride: {fileID: 0}
+    - ActiveSpeakerName: 
+      dialogText: DEFEAT 20 ENEMIES TO PROCEED
+      LeftSubjectSprite: {fileID: -2274593751980099078, guid: a2137e69549c6e544a441ab78ead7c7f, type: 3}
+      RightSubjectSprite: {fileID: 3878472819646491891, guid: 309c69b31345f9c46a0532c48154d7d2, type: 3}
+      CarryOverLastEntry: 0
+      Voice: {fileID: 0}
+      overideBackground: 0
+      hideLeftSubject: 1
+      hideRightSubject: 1
+      hideSpeakerPanelAndText: 1
       hideDialogPanel: 0
       backgroundOveride: {fileID: 0}
   - Identifier: Game Over Animatic
