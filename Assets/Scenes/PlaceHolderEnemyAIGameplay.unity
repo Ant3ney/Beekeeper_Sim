@@ -13759,6 +13759,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6156390515666890866, guid: 92cc75b88c41f9f4a841bf435900d7d1, type: 3}
+      propertyPath: beeReturnTimer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6170927314530927969, guid: 92cc75b88c41f9f4a841bf435900d7d1, type: 3}
       propertyPath: beeParent
       value: 
@@ -24036,6 +24040,10 @@ PrefabInstance:
       value: Sequencer
       objectReference: {fileID: 0}
     - target: {fileID: 6257453847698243787, guid: cb686be914338b740b645686b5c25ffa, type: 3}
+      propertyPath: sequences.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6257453847698243787, guid: cb686be914338b740b645686b5c25ffa, type: 3}
       propertyPath: 'dialogSystems.Array.data[0]'
       value: 
       objectReference: {fileID: 1436993595}
@@ -24056,8 +24064,44 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1397167906}
     - target: {fileID: 6257453847698243787, guid: cb686be914338b740b645686b5c25ffa, type: 3}
+      propertyPath: sequences.Array.data[3].playDialog
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6257453847698243787, guid: cb686be914338b740b645686b5c25ffa, type: 3}
+      propertyPath: sequences.Array.data[2].changeLevel
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6257453847698243787, guid: cb686be914338b740b645686b5c25ffa, type: 3}
+      propertyPath: sequences.Array.data[3].changeLevel
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6257453847698243787, guid: cb686be914338b740b645686b5c25ffa, type: 3}
+      propertyPath: sequences.Array.data[3].numEnemiesDead
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 6257453847698243787, guid: cb686be914338b740b645686b5c25ffa, type: 3}
+      propertyPath: sequences.Array.data[2].levelToChangeTo
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6257453847698243787, guid: cb686be914338b740b645686b5c25ffa, type: 3}
+      propertyPath: sequences.Array.data[3].levelToChangeTo
+      value: Win
+      objectReference: {fileID: 0}
+    - target: {fileID: 6257453847698243787, guid: cb686be914338b740b645686b5c25ffa, type: 3}
+      propertyPath: sequences.Array.data[2].musicTemplateToPlay
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6257453847698243787, guid: cb686be914338b740b645686b5c25ffa, type: 3}
+      propertyPath: sequences.Array.data[3].musicTemplateToPlay
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6257453847698243787, guid: cb686be914338b740b645686b5c25ffa, type: 3}
       propertyPath: sequences.Array.data[0].dialogSequenceToPlay
       value: Level 2 Intro
+      objectReference: {fileID: 0}
+    - target: {fileID: 6257453847698243787, guid: cb686be914338b740b645686b5c25ffa, type: 3}
+      propertyPath: sequences.Array.data[3].dialogSequenceToPlay
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 7413011838155467722, guid: cb686be914338b740b645686b5c25ffa, type: 3}
       propertyPath: m_LocalPosition.x
