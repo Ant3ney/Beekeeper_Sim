@@ -20887,7 +20887,7 @@ MonoBehaviour:
   Enemy: {fileID: 8283151703366814753, guid: a780850dd2eb7c9458e543c5e23dc667, type: 3}
   TimerInterval: 3
   MaxSpawnTime: 30
-  DelayTillSpawn: 3
+  DelayTillSpawn: 20
 --- !u!4 &1280326663
 Transform:
   m_ObjectHideFlags: 0
@@ -23408,7 +23408,7 @@ MonoBehaviour:
   Enemy: {fileID: 1989299543124966634, guid: 84e50ef3746219b439bc14837b8d4498, type: 3}
   TimerInterval: 3
   MaxSpawnTime: 30
-  DelayTillSpawn: 2
+  DelayTillSpawn: 45
 --- !u!4 &2039606498
 Transform:
   m_ObjectHideFlags: 0
