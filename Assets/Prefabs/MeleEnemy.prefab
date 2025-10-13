@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1615524074140129623}
   - component: {fileID: 6881625571614601790}
   - component: {fileID: 8631687142911396541}
+  - component: {fileID: 414607092793078339}
   m_Layer: 0
   m_Name: EnemyAnimation
   m_TagString: Enemy
@@ -142,6 +143,20 @@ MonoBehaviour:
   healthLeft: {fileID: 0}
   flashRedTime: 0.5
   flashRedTimer: 0
+--- !u!114 &414607092793078339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7677270650381512817}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdfea705ec95e4245a842c9e37e7c7d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movementThreshold: 0.5
+  spriteRenderer: {fileID: 0}
 --- !u!1 &8283151703366814753
 GameObject:
   m_ObjectHideFlags: 0
@@ -157,6 +172,7 @@ GameObject:
   - component: {fileID: 2383016037852485054}
   - component: {fileID: 893598854032316995}
   - component: {fileID: 8579997138295877480}
+  - component: {fileID: 6210448679430930412}
   m_Layer: 0
   m_Name: MeleEnemy
   m_TagString: Enemy
@@ -345,3 +361,25 @@ MonoBehaviour:
   healthLeft: {fileID: 0}
   flashRedTime: 0.15
   flashRedTimer: 0
+--- !u!95 &6210448679430930412
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8283151703366814753}
+  m_Enabled: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
