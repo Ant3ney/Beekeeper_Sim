@@ -150,3 +150,4 @@ MonoBehaviour:
   hiveRespawnCooldown: 16
   addFromHive: 10
   hiveHeal: 20
+  hiveRegenSoundEffect: {fileID: 8300000, guid: ba0ea4df250b46f41b85c8e633d9a069, type: 3}

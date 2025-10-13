@@ -7,6 +7,7 @@ public class HiveObject : MonoBehaviour
     private float hiveRespawnTimer = 0.0f;
     public int addFromHive = 3;
     public float hiveHeal = 20.0f;
+    public AudioClip hiveRegenSoundEffect;
 
     private Collider2D myCollider;
     private SpriteRenderer mySpriteRenderer;
@@ -32,6 +33,9 @@ public class HiveObject : MonoBehaviour
 
     public void StartInactivity()
     {
+	if (hiveRegenSoundEffect != null) {
+		AudioSource.PlayClipAtPoint(hiveRegenSoundEffect, this.transform.position);
+	}
         isInactive = true;
 
         myCollider.enabled = false;

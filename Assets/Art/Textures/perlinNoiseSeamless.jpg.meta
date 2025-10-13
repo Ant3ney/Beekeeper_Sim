@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 0eb2639a1729d3d4094e196a6d56335f
+guid: 6fbcb7a180ed0bc4b8297f993e165204
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7519852302635814909
-    second: BS_UI_Dialoguebox_0
+      213: 3714206737586162326
+    second: perlinNoiseSeamless_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -42,7 +42,7 @@ TextureImporter:
     mipBias: 0
     wrapU: 1
     wrapV: 1
-    wrapW: 1
+    wrapW: 0
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -96,17 +96,43 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BS_UI_Dialoguebox_0
+      name: perlinNoiseSeamless_0
       rect:
         serializedVersion: 2
-        x: 5
-        y: 1
-        width: 1126
-        height: 315
+        x: 0
+        y: 0
+        width: 225
+        height: 225
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: dffc20ec3d1eb5860800000000000000
-      internalID: 7519852302635814909
+      spriteID: 69a8f2069538b8330800000000000000
+      internalID: 3714206737586162326
       vertices: []
       indices: 
       edges: []
@@ -135,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      BS_UI_Dialoguebox_0: 7519852302635814909
+      perlinNoiseSeamless_0: 3714206737586162326
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
