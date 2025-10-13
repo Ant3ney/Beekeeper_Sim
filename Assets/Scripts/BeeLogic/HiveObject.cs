@@ -6,6 +6,7 @@ public class HiveObject : MonoBehaviour
     public float hiveRespawnCooldown = 25.0f;
     private float hiveRespawnTimer = 0.0f;
     public int addFromHive = 3;
+    public float hiveHeal = 20.0f;
 
     private Collider2D myCollider;
     private SpriteRenderer mySpriteRenderer;

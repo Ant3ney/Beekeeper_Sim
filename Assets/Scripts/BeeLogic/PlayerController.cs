@@ -111,6 +111,8 @@ public class PlayerController : MonoBehaviour
                 newBee.transform.position = myCloud.transform.position;
                 myCloud.myBees.Add(beeComp);
             }
+
+            myHealth += ho.hiveHeal;
             
             ho.StartInactivity();
             //bee add arsenal is in its fixed update...
