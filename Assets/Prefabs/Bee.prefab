@@ -181,3 +181,4 @@ MonoBehaviour:
   damagePerInterval: 10
   damageInterval: 0.25
   damageIntervalTimer: 0
+  beeDamageSoundEffect: {fileID: 8300000, guid: 550ccf2f72e32554c855b1a9f8193a3f, type: 3}
